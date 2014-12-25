@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="com.sun.grizzly:grizzly-servlet-webserver:1.9.18-i" type="repository">
+    <properties maven-id="com.sun.grizzly:grizzly-servlet-webserver:1.9.18-i" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-servlet-webserver-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-http-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-framework-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-utils-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-rcm-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-portunif-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/grizzly-http-servlet-1.9.18-i.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/servlet-api-2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

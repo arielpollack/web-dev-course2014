@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.codehaus.jackson:com.springsource.org.codehaus.jackson:1.0.0" type="repository">
+    <properties maven-id="org.codehaus.jackson:com.springsource.org.codehaus.jackson:1.0.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/com.springsource.org.codehaus.jackson-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

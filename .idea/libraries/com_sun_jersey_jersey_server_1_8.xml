@@ -1,0 +1,38 @@
+<component name="libraryTable">
+  <library name="com.sun.jersey:jersey-server:1.8" type="repository">
+    <properties maven-id="com.sun.jersey:jersey-server:1.8" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jersey-server-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/asm-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/persistence-api-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/mail-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/activation-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jaxb-api-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/stax-api-1.0-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/javax.servlet-3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jsp-api-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/servlet-api-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/javax.ejb-3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/javax.transaction-3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/javax.annotation-3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/weld-osgi-bundle-1.0.1-Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/cdi-api-1.0-SP1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jboss-interceptor-api-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jsr250-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/weld-api-1.0-SP1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/weld-core-1.0.1-Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/weld-spi-1.0-SP1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/javassist-3.11.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/google-collections-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jboss-interceptor-1.0.0-CR11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/slf4j-api-1.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/slf4j-ext-1.5.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/ant-1.6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/osgi_R4_core-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/jersey-core-1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
