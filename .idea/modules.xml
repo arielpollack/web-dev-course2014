@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/APTManage.iml" filepath="$PROJECT_DIR$/APTManage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RESTServive/RESTServive.iml" filepath="$PROJECT_DIR$/RESTServive/RESTServive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RESTService/RESTService.iml" filepath="$PROJECT_DIR$/RESTService/RESTService.iml" />
     </modules>
   </component>
 </project>
