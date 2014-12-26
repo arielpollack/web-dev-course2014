@@ -42,7 +42,6 @@ public class User {
 				Integer.parseInt(rs.getString(aliasIdentifier +"id")));
 	}
 
-	@JsonIgnore
 	public String getFullName()
 	{
 		return this.firstName + " " + this.lastName;

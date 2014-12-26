@@ -19,6 +19,8 @@ import models.JSONResponse;
 import models.User;
 import adapters.AppointmentsJDBCAdapter;
 import adapters.UsersJDBCAdapter;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 @Path("users")
 public class users
@@ -37,11 +39,21 @@ public class users
 
 			List<Appointment> appointments = new AppointmentsJDBCAdapter().getAppointments(user);
 
-			return new JSONResponse("ok", null, appointments);
+//			try
+//			{
+				HashMap<String, Object> data = new HashMap<String, Object>();
+				data.put("appointments", appointments);
+				data.put("user", user);
+				return JSONResponse.success(data);
+//			}
+//			catch (JSONException e)
+//			{
+//				return JSONResponse.error("Exception: " + e.getMessage());
+//			}
 		}
 		else
 		{
-			return new JSONResponse("error", "ID or password doesn't match", null);
+			return JSONResponse.error("ID or password doesn't match");
 		}
 	}
 
@@ -55,19 +67,19 @@ public class users
 		HttpSession session = request.getSession();
 		if (session == null)
 		{
-			return new JSONResponse("error", "No credentials", null);
+			return JSONResponse.noCredentials();
 		}
 
 		User currentUser = (User)session.getAttribute("user");
 		if (currentUser == null || !currentUser.getId().equals(user.getId()))
 		{
-			return new JSONResponse("error", "No credentials", null);
+			return JSONResponse.noCredentials();
 		}
 
 		if (usersAdapter.update(user)) {
-			return new JSONResponse("ok", null, user);
+			return JSONResponse.success(user);
 		}
 
-		return new JSONResponse("error", "SQL update error", null);
+		return JSONResponse.error("SQL update error");
 	}
 }

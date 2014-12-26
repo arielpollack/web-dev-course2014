@@ -2,7 +2,7 @@
   <library name="com.owlike:genson:1.1" type="repository">
     <properties maven-id="com.owlike:genson:1.1" />
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/RESTServive/web/WEB-INF/lib/genson-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTService/web/WEB-INF/lib/genson-1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

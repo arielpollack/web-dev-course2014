@@ -30,15 +30,15 @@ public class userSignup {
 			if (new UsersJDBCAdapter().insert(user, password))
 			{
 				request.getSession().setAttribute("user", user);
-				return new JSONResponse("ok", null, user);
+				return JSONResponse.success(user);
 			}
 
-			return new JSONResponse("error", "SQL insertion failed", null);
+			return JSONResponse.error("SQL insertion failed");
 		}
 		catch (Exception exception)
 		{
 			System.out.println(obj);
-			return new JSONResponse("error", "Exception: " + exception.getMessage(), null);
+			return JSONResponse.error("Exception: " + exception.getMessage());
 		}
 	}
 }
