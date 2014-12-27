@@ -1,5 +1,7 @@
 package models;
 
+import com.owlike.genson.annotation.JsonProperty;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,8 +15,19 @@ public class User {
 	
 	String id;
 
+	@JsonProperty("first_name")
 	@XmlTransient
-	String firstName, lastName, idNumber, phone, email;
+	String firstName;
+	@JsonProperty("last_name")
+	@XmlTransient
+	String lastName;
+	@JsonProperty("id_number")
+	@XmlTransient
+	String idNumber;
+	@XmlTransient
+	String phone;
+	@XmlTransient
+	String email;
 
 	@XmlElement(name="preferred_days")
 	List<String> preferredDays;

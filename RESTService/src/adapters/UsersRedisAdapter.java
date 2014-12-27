@@ -2,12 +2,19 @@ package adapters;
 
 import models.User;
 import models.UserBuilder;
+import redis.clients.jedis.Transaction;
 
 /**
  * Created by arielpollack on 12/27/14.
  */
 
 public class UsersRedisAdapter extends BaseRedisAdapter {
+
+    protected String UID_Prefix = "user:";
+
+    public UsersRedisAdapter() {
+        super();
+    }
 
     public User getUserWithID(String id)
     {
@@ -32,13 +39,15 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
 
     public Boolean insert(User user)
     {
-        jedis.set("uid:"+user.getId()+":id_number", user.getIdNumber());
-        jedis.set("uid:"+user.getId()+":fname", user.getFirstName());
-        jedis.set("uid:"+user.getId()+":lname", user.getLastName());
-        jedis.set("uid:"+user.getId()+":phone", user.getPhone());
-        jedis.set("uid:"+user.getId()+":email", user.getEmail());
+        Transaction t = jedis.multi();
+        t.set("uid:"+user.getId()+":id_number", user.getIdNumber());
+        t.set("uid:"+user.getId()+":fname", user.getFirstName());
+        t.set("uid:"+user.getId()+":lname", user.getLastName());
+        t.set("uid:"+user.getId()+":phone", user.getPhone());
+        t.set("uid:"+user.getId()+":email", user.getEmail());
 
-        jedis.set("id_number:"+user.getIdNumber()+":uid", user.getId().toString());
+        t.set("id_number:"+user.getIdNumber()+":uid", user.getId());
+        t.exec();
 
         return true;
     }

@@ -1,5 +1,7 @@
 package models;
 
+import com.owlike.genson.annotation.JsonIgnore;
+
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,7 +42,7 @@ public class Appointment {
 	{
 		return this.user;
 	}
-	
+
 	public User getTherapist()
 	{
 		return this.therapist;
