@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="redis.clients:jedis:2.6.0" type="repository">
+    <properties maven-id="redis.clients:jedis:2.6.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jedis-2.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RESTService/web/WEB-INF/lib/commons-pool2-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

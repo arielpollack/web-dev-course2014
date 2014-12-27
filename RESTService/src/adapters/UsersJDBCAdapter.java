@@ -9,20 +9,17 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.User;
+import models.*;
 
-public class UsersJDBCAdapter 
+public class UsersJDBCAdapter extends BaseJDBCAdepter
 {
-
-	Connection conn;
-	
 	static public final String TABLE_NAME = "tbl_user";
-	
-	public UsersJDBCAdapter()
-	{
-		conn = DBManager.getConnection();
+
+	public UsersJDBCAdapter() {
+		super();
 	}
-	
+
+	@Override
 	public void createTable()
 	{
 		try
@@ -88,7 +85,7 @@ public class UsersJDBCAdapter
 			prSt.setString(3, user.getIdNumber());
 			prSt.setString(4, user.getEmail());
 			prSt.setString(5, user.getPhone());
-			prSt.setInt(6, user.getId());
+			prSt.setString(6, user.getId());
 			prSt.executeUpdate();
 		}
 		catch (SQLException ex)

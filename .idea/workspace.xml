@@ -1,160 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f093a983-9db3-4d36-a271-c138ae6ab147" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/RESTServive_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_owlike_genson_0_99.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_18_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_json_1_18_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_jaxrs_1_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_xc_1_9_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/asm_asm_3_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_grizzly_grizzly_servlet_webserver_1_9_18_i.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_codehaus_jackson_com_springsource_org_codehaus_jackson_1_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_codehaus_jackson_com_springsource_org_codehaus_jackson_1_4_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/activation-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/ant-1.6.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/asm-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/asm-3.3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/cdi-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/genson-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/google-collections-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-framework-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-http-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-http-servlet-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-portunif-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-rcm-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-servlet-webserver-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/grizzly-utils-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/javassist-3.11.0.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/javax.annotation-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/javax.ejb-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/javax.servlet-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/javax.transaction-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jaxb-api-2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jaxb-api-2.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jaxb-impl-2.2.3-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jboss-interceptor-1.0.0-CR11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jboss-interceptor-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jersey-core-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jersey-json-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jersey-server-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jettison-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jsp-api-2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/mail-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/mysql-connector-java-5.1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/osgi_R4_core-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/persistence-api-1.0.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/servlet-api-2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/servlet-api-2.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/slf4j-api-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/slf4j-ext-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/stax-api-1.0-2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/stax-api-1.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/weld-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/weld-core-1.0.1-Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/weld-osgi-bundle-1.0.1-Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RESTService/web/WEB-INF/lib/weld-spi-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/activation-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/ant-1.6.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/asm-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/cdi-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/com.springsource.org.codehaus.jackson-1.4.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/google-collections-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javassist-3.11.0.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.annotation-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.ejb-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.inject-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.servlet-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.transaction-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jaxb-api-2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jboss-interceptor-1.0.0-CR11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jboss-interceptor-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jersey-core-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jersey-server-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jsp-api-2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jsr250-api-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/mail-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/osgi_R4_core-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/persistence-api-1.0.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/servlet-api-2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slf4j-api-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slf4j-ext-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/stax-api-1.0-2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/weld-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/weld-core-1.0.1-Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/weld-osgi-bundle-1.0.1-Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/weld-spi-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/ant-1.6.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/asm-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/asm-3.3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/cdi-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/google-collections-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-framework-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-http-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-http-servlet-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-portunif-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-rcm-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-servlet-webserver-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/grizzly-utils-1.9.18-i.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/javassist-3.11.0.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/javax.annotation-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/javax.ejb-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/javax.servlet-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/javax.transaction-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/jaxb-api-2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/jboss-interceptor-1.0.0-CR11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/jboss-interceptor-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/jersey-server-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/jsp-api-2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/mail-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/osgi_R4_core-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/persistence-api-1.0.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/servlet-api-2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/servlet-api-2.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/slf4j-api-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/slf4j-ext-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/weld-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/weld-core-1.0.1-Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/weld-osgi-bundle-1.0.1-Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/WEB-INF/lib/weld-spi-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/RESTServive_war_exploded/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/AuthFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/adapters/AppointmentsJDBCAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/adapters/DBManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/adapters/UsersJDBCAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/adapters/Utils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/admin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/filters/FilterServletOutputStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/filters/GenericResponseWrapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/models/Appointment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/models/AppointmentBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/models/JSONResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/models/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/models/UserBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/userSignup.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RESTServive/users.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RESTService/src/adapters/BaseJDBCAdepter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RESTService/src/adapters/BaseRedisAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RESTService/src/adapters/UsersRedisAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/arielpollack.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/redis_clients_jedis_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/redis_clients_jedis_2_6_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/RESTService_war_exploded/WEB-INF/classes/models/JSONResponse.class" afterPath="$PROJECT_DIR$/out/artifacts/RESTService_war_exploded/WEB-INF/classes/models/JSONResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RESTService/models/JSONResponse.class" afterPath="$PROJECT_DIR$/out/production/RESTService/models/JSONResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/RESTService_war_exploded/WEB-INF/classes/models/User.class" afterPath="$PROJECT_DIR$/out/artifacts/RESTService_war_exploded/WEB-INF/classes/models/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RESTService/models/User.class" afterPath="$PROJECT_DIR$/out/production/RESTService/models/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/RESTService_war_exploded/WEB-INF/classes/users.class" afterPath="$PROJECT_DIR$/out/artifacts/RESTService_war_exploded/WEB-INF/classes/users.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RESTService/users.class" afterPath="$PROJECT_DIR$/out/production/RESTService/users.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java" afterPath="$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/adapters/DBManager.java" afterPath="$PROJECT_DIR$/RESTService/src/adapters/DBManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/models/JSONResponse.java" afterPath="$PROJECT_DIR$/RESTService/src/models/JSONResponse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/RESTService.iml" afterPath="$PROJECT_DIR$/RESTService/RESTService.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/models/User.java" afterPath="$PROJECT_DIR$/RESTService/src/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_owlike_genson_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_owlike_genson_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_jersey_jersey_json_1_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_sun_jersey_jersey_json_1_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_jersey_jersey_server_1_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_sun_jersey_jersey_server_1_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/userSignup.java" afterPath="$PROJECT_DIR$/RESTService/src/userSignup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/models/UserBuilder.java" afterPath="$PROJECT_DIR$/RESTService/src/models/UserBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java" afterPath="$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/adapters/Utils.java" afterPath="$PROJECT_DIR$/RESTService/src/adapters/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/users.java" afterPath="$PROJECT_DIR$/RESTService/src/users.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="APTManage.iws" />
@@ -182,13 +53,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RESTService/src/users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59911245" vertical-offset="0" max-vertical-offset="1035">
-              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="930">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppointmentsJDBCAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1035">
+              <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
               <folding>
-                <element signature="e#1267#1283#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="method#createTable#0;class#AppointmentsJDBCAdapter#0" expanded="false" />
+                <marker date="1419680917000" expanded="true" signature="671:975" placeholder="create table..if..." />
+                <marker date="1419680917000" expanded="true" signature="1071:1213" placeholder="alter table ..." />
+                <marker date="1419680917000" expanded="true" signature="1565:1643" placeholder="insert into ..." />
+                <marker date="1419680917000" expanded="true" signature="2065:2588" placeholder="select a.*, ..." />
               </folding>
             </state>
           </provider>
@@ -197,37 +84,32 @@
       <file leaf-file-name="UsersJDBCAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
-              <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="750">
+              <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#423#424#0" expanded="false" />
-                <element signature="e#462#463#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="method#createTable#0;class#UsersJDBCAdapter#0" expanded="false" />
+                <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
+                <element signature="method#update#0;class#UsersJDBCAdapter#0" expanded="false" />
                 <element signature="method#getUser#0;class#UsersJDBCAdapter#0" expanded="false" />
                 <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
                 <element signature="method#searchUsers#0;class#UsersJDBCAdapter#0" expanded="false" />
-                <marker date="1419545604000" expanded="true" signature="693:1234" placeholder="create table..if..." />
+                <marker date="1419681081000" expanded="true" signature="675:1216" placeholder="create table..if..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RESTService/src/models/User.java">
+      <file leaf-file-name="UsersRedisAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersRedisAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="appointments.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RESTService/src/appointments.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="960">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -250,10 +132,17 @@
         <option value="$PROJECT_DIR$/RESTServive/src/models/User.java" />
         <option value="$PROJECT_DIR$/RESTServive/src/appointments.java" />
         <option value="$PROJECT_DIR$/RESTService/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/RESTService/src/models/JSONResponse.java" />
         <option value="$PROJECT_DIR$/RESTService/src/userSignup.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/models/User.java" />
         <option value="$PROJECT_DIR$/RESTService/src/users.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/models/JSONResponse.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/adapters/DBManager.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/adapters/BaseJDBCAdepter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/adapters/BaseRedisAdapter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/models/User.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/models/UserBuilder.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/adapters/UsersRedisAdapter.java" />
       </list>
     </option>
   </component>
@@ -327,6 +216,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -435,14 +326,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="adapters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -460,7 +349,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2589183" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/RESTService/web/WEB-INF/lib" />
@@ -887,46 +776,47 @@
       <workItem from="1419528519384" duration="204000" />
       <workItem from="1419529219501" duration="10261000" />
       <workItem from="1419548030663" duration="1323000" />
-      <workItem from="1419572767716" duration="1198000" />
+      <workItem from="1419572767716" duration="6532000" />
+      <workItem from="1419682639514" duration="23000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12986000" />
+    <option name="totallyTimeSpent" value="18343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-130" y="-1057" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2874494" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28861788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -947,7 +837,16 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java</url>
+          <line>52</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -955,6 +854,59 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/RESTService/src/users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="930">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1035">
+          <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
+          <folding>
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="method#createTable#0;class#AppointmentsJDBCAdapter#0" expanded="false" />
+            <marker date="1419680917000" expanded="true" signature="671:975" placeholder="create table..if..." />
+            <marker date="1419680917000" expanded="true" signature="1071:1213" placeholder="alter table ..." />
+            <marker date="1419680917000" expanded="true" signature="1565:1643" placeholder="insert into ..." />
+            <marker date="1419680917000" expanded="true" signature="2065:2588" placeholder="select a.*, ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="750">
+          <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#createTable#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#update#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#getUser#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#searchUsers#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <marker date="1419681081000" expanded="true" signature="675:1216" placeholder="create table..if..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersRedisAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
@@ -967,9 +919,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="885">
           <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding>
-            <element signature="e#1267#1283#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -978,13 +928,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
           <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#423#424#0" expanded="false" />
-            <element signature="e#462#463#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#createTable#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#update#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#searchUsers#0;class#UsersJDBCAdapter#0" expanded="false" />
-            <marker date="1419545604000" expanded="true" signature="693:1234" placeholder="create table..if..." />
+            <marker date="1419681081000" expanded="true" signature="675:1216" placeholder="create table..if..." />
           </folding>
         </state>
       </provider>
@@ -993,7 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="1080">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +962,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="750">
           <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1035,9 +987,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="885">
           <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding>
-            <element signature="e#1267#1283#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,13 +996,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
           <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#423#424#0" expanded="false" />
-            <element signature="e#462#463#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#createTable#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#update#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#searchUsers#0;class#UsersJDBCAdapter#0" expanded="false" />
-            <marker date="1419545604000" expanded="true" signature="693:1234" placeholder="create table..if..." />
+            <marker date="1419681081000" expanded="true" signature="675:1216" placeholder="create table..if..." />
           </folding>
         </state>
       </provider>
@@ -1061,7 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="1080">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,22 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
-          <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#423#424#0" expanded="false" />
-            <element signature="e#462#463#0" expanded="false" />
-            <element signature="method#getUser#0;class#UsersJDBCAdapter#0" expanded="false" />
-            <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
-            <element signature="method#searchUsers#0;class#UsersJDBCAdapter#0" expanded="false" />
-            <marker date="1419545604000" expanded="true" signature="693:1234" placeholder="create table..if..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/src.zip!/java/lang/Boolean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33283803" vertical-offset="61" max-vertical-offset="3615">
@@ -1135,53 +1071,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/models/JSONResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59911245" vertical-offset="0" max-vertical-offset="676">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/userSignup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7781065" vertical-offset="74" max-vertical-offset="750">
           <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/src.zip!/javax/xml/bind/annotation/XmlTransient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5088757" vertical-offset="0" max-vertical-offset="1125">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/models/JSONResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3794643" vertical-offset="0" max-vertical-offset="672">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91071427" vertical-offset="138" max-vertical-offset="855">
+          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/appointments.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+        <state vertical-scroll-proportion="0.22321428" vertical-offset="0" max-vertical-offset="672">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/BaseJDBCAdepter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3794643" vertical-offset="0" max-vertical-offset="672">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/AppointmentsJDBCAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1035">
+          <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
+          <folding>
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="method#createTable#0;class#AppointmentsJDBCAdapter#0" expanded="false" />
+            <marker date="1419680917000" expanded="true" signature="671:975" placeholder="create table..if..." />
+            <marker date="1419680917000" expanded="true" signature="1071:1213" placeholder="alter table ..." />
+            <marker date="1419680917000" expanded="true" signature="1565:1643" placeholder="insert into ..." />
+            <marker date="1419680917000" expanded="true" signature="2065:2588" placeholder="select a.*, ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59911245" vertical-offset="0" max-vertical-offset="1035">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="930">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3392857" vertical-offset="513" max-vertical-offset="1185">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/models/UserBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10983264" vertical-offset="0" max-vertical-offset="956">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersJDBCAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
           <folding>
-            <element signature="e#1267#1283#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="method#createTable#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#update#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#getUser#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
+            <element signature="method#searchUsers#0;class#UsersJDBCAdapter#0" expanded="false" />
+            <marker date="1419681081000" expanded="true" signature="675:1216" placeholder="create table..if..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/BaseRedisAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14121339" vertical-offset="0" max-vertical-offset="956">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/adapters/UsersRedisAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="960">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1252,7 +1263,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>com.sun.jersey:jersey-json:1.8</last-edited>
+          <last-edited>redis.clients:jedis:2.6.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

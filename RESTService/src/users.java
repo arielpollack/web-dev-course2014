@@ -39,17 +39,10 @@ public class users
 
 			List<Appointment> appointments = new AppointmentsJDBCAdapter().getAppointments(user);
 
-//			try
-//			{
-				HashMap<String, Object> data = new HashMap<String, Object>();
-				data.put("appointments", appointments);
-				data.put("user", user);
-				return JSONResponse.success(data);
-//			}
-//			catch (JSONException e)
-//			{
-//				return JSONResponse.error("Exception: " + e.getMessage());
-//			}
+			HashMap<String, Object> data = new HashMap<String, Object>();
+			data.put("appointments", appointments);
+			data.put("user", user);
+			return JSONResponse.success(data);
 		}
 		else
 		{

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class UserBuilder {
 	
-	Integer _id = 0;
+	String _id;
 	String _firstName, _lastName, _idNumber, _phone, _email;
 	List<String> _preferredDays, _preferredHours;
 	Boolean _isAdmin;

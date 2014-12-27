@@ -1,7 +1,7 @@
 package adapters;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;;
+import java.security.NoSuchAlgorithmException;
 
 public class Utils {
 

@@ -1,28 +1,32 @@
 package models;
 
-import com.owlike.genson.annotation.JsonIgnore;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class User {
 	
-	Integer id;
-	
-	public String firstName, lastName, idNumber, phone, email;
-	
-	List<String> preferredDays, preferredHours;
+	String id;
 
-	@JsonIgnore
+	@XmlTransient
+	String firstName, lastName, idNumber, phone, email;
+
+	@XmlElement(name="preferred_days")
+	List<String> preferredDays;
+	@XmlElement(name="preferred_hours")
+	List<String> preferredHours;
+
+	@XmlTransient
 	Boolean isAdmin;
 	
 	public User() {} // JAXB requirement
 	
-	public User(String fname, String lname, String idNumber, String phone, String email, Integer id)
+	public User(String fname, String lname, String idNumber, String phone, String email, String id)
 	{
 		this.firstName = fname;
 		this.lastName = lname;
@@ -39,24 +43,19 @@ public class User {
 				rs.getString(aliasIdentifier +"id_number"), 
 				rs.getString(aliasIdentifier +"phone"), 
 				rs.getString(aliasIdentifier +"email"),
-				Integer.parseInt(rs.getString(aliasIdentifier +"id")));
+				rs.getString(aliasIdentifier +"id"));
 	}
 
-	public String getFullName()
-	{
-		return this.firstName + " " + this.lastName;
-	}
-	
 	public void setFirstName(String fname)
 	{
 		this.firstName = fname;
 	}
-	
+
 	public void setLastName(String lname)
 	{
 		this.lastName = lname;
 	}
-	
+
 	public void setIdNumber(String idNumber)
 	{
 		this.idNumber= idNumber;
@@ -71,17 +70,26 @@ public class User {
 	{
 		this.email = email;
 	}
-	
+
+	@XmlElement(name="first_name")
 	public String getFirstName()
 	{
 		return this.firstName;
 	}
-	
+
+	@XmlElement(name="last_name")
 	public String getLastName()
 	{
 		return this.lastName;
 	}
-	
+
+	@XmlElement(name="full_name")
+	public String getFullName()
+	{
+		return this.firstName + " " + this.lastName;
+	}
+
+	@XmlElement(name="id_number")
 	public String getIdNumber()
 	{
 		return this.idNumber;
@@ -97,12 +105,12 @@ public class User {
 		return this.email;
 	}
 	
-	public Integer getId()
+	public String getId()
 	{
 		return this.id;
 	}
 
-	@JsonIgnore
+	@XmlTransient
 	public Boolean getIsAdmin()
 	{
 		return this.isAdmin;

@@ -11,18 +11,15 @@ import java.util.ArrayList;
 
 import models.*;
 
-public class AppointmentsJDBCAdapter 
+public class AppointmentsJDBCAdapter extends BaseJDBCAdepter
 {
-
-	Connection conn;
-	
 	static public final String TABLE_NAME = "tbl_appointment";
-	
-	public AppointmentsJDBCAdapter()
-	{
-		conn = DBManager.getConnection();
+
+	public AppointmentsJDBCAdapter() {
+		super();
 	}
-	
+
+	@Override
 	public void createTable()
 	{
 		try
@@ -59,8 +56,8 @@ public class AppointmentsJDBCAdapter
 		{
 			PreparedStatement prSt = conn.prepareStatement(SQL);
 			prSt.setDate(1, date);
-			prSt.setInt(2, user.getId());
-			prSt.setInt(3, therapist.getId());
+			prSt.setString(2, user.getId());
+			prSt.setString(3, therapist.getId());
 			prSt.executeUpdate();
 		}
 		catch (SQLException ex)
@@ -86,7 +83,7 @@ public class AppointmentsJDBCAdapter
 		try
 		{
 			PreparedStatement prSt = conn.prepareStatement(SQL);
-			prSt.setInt(1, user.getId());
+			prSt.setString(1, user.getId());
 			for (ResultSet st = prSt.executeQuery(); st.next();)
 			{
 				appointments.add(new Appointment("", st));
