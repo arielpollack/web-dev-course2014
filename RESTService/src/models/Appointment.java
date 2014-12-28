@@ -1,8 +1,9 @@
 package models;
 
+import com.owlike.genson.annotation.JsonDateFormat;
 import com.owlike.genson.annotation.JsonIgnore;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -13,6 +14,7 @@ public class Appointment {
 	
 	Integer id;
 	User user, therapist;
+	@JsonDateFormat(asTimeInMillis = true)
 	Date date;
 	
 	public Appointment() {} // JAXB requirement
@@ -51,5 +53,13 @@ public class Appointment {
 	public Integer getId()
 	{
 		return this.id;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setTherapist(User therapist) {
+		this.therapist = therapist;
 	}
 }

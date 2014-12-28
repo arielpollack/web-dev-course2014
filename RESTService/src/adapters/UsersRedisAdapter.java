@@ -1,5 +1,6 @@
 package adapters;
 
+import com.owlike.genson.Genson;
 import models.User;
 import models.UserBuilder;
 import redis.clients.jedis.Transaction;
@@ -10,7 +11,7 @@ import redis.clients.jedis.Transaction;
 
 public class UsersRedisAdapter extends BaseRedisAdapter {
 
-    protected String UID_Prefix = "user:";
+    protected static final String UID_Prefix = "user:";
 
     public UsersRedisAdapter() {
         super();
@@ -18,38 +19,32 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
 
     public User getUserWithID(String id)
     {
-        String idNumber = jedis.get("uid:"+id+":id_number");
-        if (idNumber == null || idNumber.length() == 0)
+        String json = jedis.get(UID_Prefix + id);
+        if (json == null || json.length() == 0)
         {
             return null;
         }
 
-        String email = jedis.get("uid:"+id+":email");
-        String phone = jedis.get("uid:"+id+":phone");
-        String firstName = jedis.get("uid:"+id+":fname");
-        String lastName = jedis.get("uid:"+id+":lname");
-
-        User user = new UserBuilder().firstName(firstName).lastName(lastName)
-                                    .phone(phone).email(email)
-                                    .idNumber(idNumber)
-                                    .buildUser();
+        User user = new Genson().deserialize(json, User.class);
 
         return user;
     }
 
-    public Boolean insert(User user)
+    public Boolean insert(User user, String password)
     {
+        String redisUserId = UID_Prefix + user.getId();
+
         Transaction t = jedis.multi();
-        t.set("uid:"+user.getId()+":id_number", user.getIdNumber());
-        t.set("uid:"+user.getId()+":fname", user.getFirstName());
-        t.set("uid:"+user.getId()+":lname", user.getLastName());
-        t.set("uid:"+user.getId()+":phone", user.getPhone());
-        t.set("uid:"+user.getId()+":email", user.getEmail());
 
-        t.set("id_number:"+user.getIdNumber()+":uid", user.getId());
-        t.exec();
+        t.set(redisUserId, new Genson().serialize(user));
 
-        return true;
+        // password caching
+        if (password != null && password.length() > 0)
+        {
+            t.set("user:id_number:" + user.getIdNumber() + ":password", password);
+        }
+
+        return (t.exec().size() > 0);
     }
 
 

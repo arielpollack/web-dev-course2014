@@ -1,5 +1,6 @@
 package models;
 
+import com.owlike.genson.annotation.JsonIgnore;
 import com.owlike.genson.annotation.JsonProperty;
 
 import java.sql.ResultSet;
@@ -34,6 +35,7 @@ public class User {
 	@XmlElement(name="preferred_hours")
 	List<String> preferredHours;
 
+	@JsonIgnore
 	@XmlTransient
 	Boolean isAdmin;
 	
