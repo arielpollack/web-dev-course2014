@@ -9,8 +9,7 @@ public class BaseJDBCAdepter {
 
     Connection conn;
 
-    public BaseJDBCAdepter()
-    {
+    public BaseJDBCAdepter() {
         conn = DBManager.getConnection();
     }
 

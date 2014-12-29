@@ -11,8 +11,7 @@ import java.util.*;
  * Created by arielpollack on 12/27/14.
  */
 
-public class AppointmentsRedisAdapter extends BaseRedisAdapter
-{
+public class AppointmentsRedisAdapter extends BaseRedisAdapter {
     protected static final String UID_Prefix = "apt:";
     static Genson genson = new Genson();
 
@@ -20,8 +19,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter
         super();
     }
 
-    public List<Appointment> getToday()
-    {
+    public List<Appointment> getToday() {
         List<Appointment> appointments = new ArrayList<Appointment>();
 
         Calendar calendar = new GregorianCalendar();
@@ -37,11 +35,9 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter
         Set<String> keys = jedis.zrangeByScore("apts:daily", now, tomorrow);
         System.out.println(keys);
 
-        for (String key : keys)
-        {
+        for (String key : keys) {
             Appointment appointment = getAppointmentForKey(key);
-            if (appointment != null)
-            {
+            if (appointment != null) {
                 appointments.add(appointment);
             }
         }
@@ -49,8 +45,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter
         return appointments;
     }
 
-    public List<Appointment> getForUser(User user, Date startDate, Date endDate)
-    {
+    public List<Appointment> getForUser(User user, Date startDate, Date endDate) {
         List<Appointment> appointments = new ArrayList<Appointment>();
 
         String from = startDate != null ? String.valueOf(startDate.getTime()) : "-inf";
@@ -59,11 +54,9 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter
 
         System.out.println("Fetching for user " + user.getId() + " from " + from + " to " + to);
         Genson genson = new Genson();
-        for (String key : keys)
-        {
+        for (String key : keys) {
             Appointment appointment = getAppointmentForKey(key);
-            if (appointment != null)
-            {
+            if (appointment != null) {
                 appointments.add(appointment);
             }
         }
@@ -71,8 +64,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter
         return appointments;
     }
 
-    public Boolean insert(Appointment appointment)
-    {
+    public Boolean insert(Appointment appointment) {
         // objects keys
         String userRedisId = UsersRedisAdapter.UID_Prefix + appointment.getUser().getId();
         String therapistRedisId = UsersRedisAdapter.UID_Prefix + appointment.getTherapist().getId();

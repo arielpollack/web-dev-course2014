@@ -16,19 +16,16 @@ import java.util.List;
  */
 
 @Path("appointments")
-public class appointments
-{
+public class appointments {
     @GET
     @Path("today")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getToday()
-    {
+    public JSONResponse getToday() {
         try {
             List<Appointment> appointments = new AppointmentsRedisAdapter().getToday();
 
             return JSONResponse.success(appointments);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             return JSONResponse.error("Exception: " + ex.getMessage());
         }
     }
@@ -36,8 +33,7 @@ public class appointments
     @GET
     @Path("{user_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getUserAppointments(@PathParam("user_id") String userId)
-    {
+    public JSONResponse getUserAppointments(@PathParam("user_id") String userId) {
         try {
             User user = new UsersRedisAdapter().getUserWithID(userId);
             if (user == null) {
@@ -47,8 +43,7 @@ public class appointments
             List<Appointment> appointments = new AppointmentsRedisAdapter().getForUser(user, null, null);
 
             return JSONResponse.success(appointments);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             return JSONResponse.error("Exception: " + ex.getMessage());
         }
     }

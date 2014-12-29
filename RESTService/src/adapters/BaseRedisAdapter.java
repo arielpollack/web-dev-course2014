@@ -9,6 +9,8 @@ public class BaseRedisAdapter {
 
     protected Jedis jedis;
 
-    public BaseRedisAdapter() { jedis = DBManager.getRedis(); }
+    public BaseRedisAdapter() {
+        jedis = DBManager.getRedis();
+    }
 
 }

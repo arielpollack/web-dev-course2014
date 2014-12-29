@@ -17,11 +17,9 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
         super();
     }
 
-    public User getUserWithID(String id)
-    {
+    public User getUserWithID(String id) {
         String json = jedis.get(UID_Prefix + id);
-        if (json == null || json.length() == 0)
-        {
+        if (json == null || json.length() == 0) {
             return null;
         }
 
@@ -30,8 +28,7 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
         return user;
     }
 
-    public Boolean insert(User user, String password)
-    {
+    public Boolean insert(User user, String password) {
         String redisUserId = UID_Prefix + user.getId();
 
         Transaction t = jedis.multi();
@@ -39,8 +36,7 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
         t.set(redisUserId, new Genson().serialize(user));
 
         // password caching
-        if (password != null && password.length() > 0)
-        {
+        if (password != null && password.length() > 0) {
             t.set("user:id_number:" + user.getIdNumber() + ":password", password);
         }
 
