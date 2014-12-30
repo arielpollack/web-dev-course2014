@@ -13,6 +13,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Appointment {
 
     Integer id;
+
+    // we ignore users in json because we will always fetch them separately
+    // for getting the most updated record, and set them straight to the object
     @JsonIgnore
     User user, therapist;
     @JsonDateFormat(asTimeInMillis = true)
@@ -35,6 +38,7 @@ public class Appointment {
                 rs.getInt(aliasIdentifier + "id"));
     }
 
+    @JsonDateFormat(asTimeInMillis = true)
     public Date getDate() {
         return this.date;
     }
@@ -57,5 +61,22 @@ public class Appointment {
 
     public void setTherapist(User therapist) {
         this.therapist = therapist;
+    }
+
+    @Override
+    public String toString() {
+        String self = "{ id = " + id + ", date = " + date;
+        if (user != null) {
+            self += ", user = " + user.toString();
+        }
+        if (therapist != null) {
+            self += ", therapist = " + therapist.toString();
+        }
+        self += " }";
+        return self;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

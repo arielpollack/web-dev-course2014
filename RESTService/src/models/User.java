@@ -7,9 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class User {
@@ -17,38 +15,33 @@ public class User {
     String id;
 
     @JsonProperty("first_name")
-    @XmlTransient
     String firstName;
     @JsonProperty("last_name")
-    @XmlTransient
     String lastName;
     @JsonProperty("id_number")
-    @XmlTransient
     String idNumber;
-    @XmlTransient
     String phone;
-    @XmlTransient
     String email;
 
-    @XmlElement(name = "preferred_days")
+    @JsonProperty("preferred_days")
     List<String> preferredDays;
-    @XmlElement(name = "preferred_hours")
+    @JsonProperty("preferred_hours")
     List<String> preferredHours;
 
-    @JsonIgnore
-    @XmlTransient
+    @JsonProperty("is_admin")
     Boolean isAdmin;
 
     public User() {
     } // JAXB requirement
 
-    public User(String fname, String lname, String idNumber, String phone, String email, String id) {
+    public User(String fname, String lname, String idNumber, String phone, String email, String id, Boolean isAdmin) {
         this.firstName = fname;
         this.lastName = lname;
         this.idNumber = idNumber;
         this.phone = phone;
         this.email = email;
         this.id = id;
+        this.isAdmin = isAdmin;
     }
 
     public User(String aliasIdentifier, ResultSet rs) throws SQLException {
@@ -57,7 +50,8 @@ public class User {
                 rs.getString(aliasIdentifier + "id_number"),
                 rs.getString(aliasIdentifier + "phone"),
                 rs.getString(aliasIdentifier + "email"),
-                rs.getString(aliasIdentifier + "id"));
+                rs.getString(aliasIdentifier + "id"),
+                rs.getBoolean(aliasIdentifier + "is_admin"));
     }
 
     public void setFirstName(String fname) {
@@ -80,22 +74,22 @@ public class User {
         this.email = email;
     }
 
-    @XmlElement(name = "first_name")
+    @JsonProperty("first_name")
     public String getFirstName() {
         return this.firstName;
     }
 
-    @XmlElement(name = "last_name")
+    @JsonProperty("last_name")
     public String getLastName() {
         return this.lastName;
     }
 
-    @XmlElement(name = "full_name")
+    @JsonProperty("full_name")
     public String getFullName() {
         return this.firstName + " " + this.lastName;
     }
 
-    @XmlElement(name = "id_number")
+    @JsonProperty("id_number")
     public String getIdNumber() {
         return this.idNumber;
     }
@@ -112,8 +106,13 @@ public class User {
         return this.id;
     }
 
-    @XmlTransient
-    public Boolean getIsAdmin() {
+    @JsonIgnore
+    public Boolean isAdmin() {
         return this.isAdmin;
+    }
+
+    @Override
+    public String toString() {
+        return "{ id = " + id + ",name = " + getFullName() + " }";
     }
 }

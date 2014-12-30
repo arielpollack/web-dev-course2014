@@ -28,6 +28,7 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
     }
 
     public User getUserById(String id) {
+
         String json = jedis.get(UID_Prefix + id);
         if (json == null || json.length() == 0) {
             return null;
@@ -37,6 +38,7 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
     }
 
     public Boolean insert(User user, String password) {
+
         String redisUserId = UID_Prefix + user.getId();
 
         Transaction t = jedis.multi();
@@ -60,6 +62,31 @@ public class UsersRedisAdapter extends BaseRedisAdapter {
         if (realPassword == null || realPassword.length() == 0 || !realPassword.equals(password)) {
             return null;
         }
+
+        // get user id
+        String id = jedis.get(ID_NUMBER_Prefix + idNumber + ":uid");
+        if (id == null || id.length() == 0) {
+            return null;
+        }
+
+        // get user's data
+        String json = jedis.get(UID_Prefix + id);
+        if (json == null || json.length() == 0) {
+            return null;
+        }
+
+        return new Genson().deserialize(json, User.class);
+    }
+
+    public void delete(User user) {
+        Transaction t = jedis.multi();
+        t.del(UID_Prefix + user.getId());
+        t.del(ID_NUMBER_Prefix + user.getIdNumber() + ":password");
+        t.del(ID_NUMBER_Prefix + user.getIdNumber() + ":uid");
+        t.exec();
+    }
+
+    public User getUserByIdNumber(String idNumber) {
 
         // get user id
         String id = jedis.get(ID_NUMBER_Prefix + idNumber + ":uid");

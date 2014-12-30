@@ -13,7 +13,7 @@ public class UserBuilder {
     }
 
     public User buildUser() {
-        return new User(_firstName, _lastName, _idNumber, _phone, _email, _id);
+        return new User(_firstName, _lastName, _idNumber, _phone, _email, _id, false);
     }
 
     public UserBuilder firstName(String firstName) {

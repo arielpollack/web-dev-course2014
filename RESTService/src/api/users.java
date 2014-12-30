@@ -27,11 +27,11 @@ public class users {
     @Consumes(MediaType.APPLICATION_JSON)
     public JSONResponse postLogin(@Context HttpServletRequest request, HashMap<String, String> login) {
         try {
-            User user = UsersRepository.getForIdNumberAndPassword(login.get("id_number"), login.get("password"));
+            User user = UsersRepository.getByIdNumberAndPassword(login.get("id_number"), login.get("password"));
             if (user != null) {
                 request.getSession().setAttribute("user", user);
 
-                List<Appointment> appointments = AppointmentsRepository.getForUser(user);
+                List<Appointment> appointments = AppointmentsRepository.getForUser(user, 0, 0);
 
                 HashMap<String, Object> data = new HashMap<String, Object>();
                 data.put("appointments", appointments);
@@ -41,6 +41,8 @@ public class users {
                 throw new NoCredentialsException();
             }
         } catch (Exception ex) {
+            System.err.println(ex);
+            ex.printStackTrace();
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -54,6 +56,8 @@ public class users {
     public JSONResponse updateUser(@Context HttpServletRequest request, User user) {
         try {
             User currentUser = checkCredentials(request);
+            System.out.println(currentUser);
+            System.out.println(user);
             if (!currentUser.getId().equals(user.getId())) {
                 throw new NoCredentialsException();
             }
@@ -64,6 +68,7 @@ public class users {
 
             return JSONResponse.success(user);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -73,27 +78,14 @@ public class users {
     //=========================================================================================
     @GET @Path("appointment")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getAllAppointments(@Context HttpServletRequest request) {
+    public JSONResponse getAllAppointments(@Context HttpServletRequest request, @QueryParam("start") Long start, @QueryParam("end") Long end) {
         try {
             User user = checkCredentials(request);
-            List<Appointment> appointments = AppointmentsRepository.getForUser(user);
+            List<Appointment> appointments = AppointmentsRepository.getForUser(user, start != null ? start : 0, end != null ? end : 0);
 
             return JSONResponse.success(appointments);
         } catch (Exception ex) {
-            return JSONResponse.error(ex.getMessage());
-        }
-    }
-
-    @GET @Path("appointment/date/{date_in_millies}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getDateAppointments(@Context HttpServletRequest request, @PathParam("date_in_millies") String dateMillies) {
-        try {
-            User user = checkCredentials(request);
-            Date date = new Date(Integer.parseInt(dateMillies));
-            List<Appointment> appointments = AppointmentsRepository.getForUserAndDate(user, date);
-
-            return JSONResponse.success(appointments);
-        } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -105,12 +97,18 @@ public class users {
         try {
             User user = checkCredentials(request);
             appointment.setUser(user); // appointment is received only with date, the user can't choose the therapist
+            if (appointment.getTherapist() == null) {
+                appointment.setTherapist(UsersRepository.getById("3")); // set the temporary therapist
+            }
+
             if (!AppointmentsRepository.insert(appointment)) {
                 return JSONResponse.error("Insert error");
             }
 
             return JSONResponse.success(appointment);
         } catch (Exception ex) {
+            System.err.println(ex);
+            ex.printStackTrace();
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -128,6 +126,7 @@ public class users {
 
             return JSONResponse.success(appointment);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }

@@ -59,47 +59,31 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         }
     }
 
-    public void insert(User user, User therapist, Date date) {
+    public Boolean insert(Appointment appointment) {
         String SQL = String.format("insert into `%s` (`date`, `user_id`, `therapist_id`) values(?,?,?);", TABLE_NAME);
         try {
-            PreparedStatement prSt = conn.prepareStatement(SQL);
-            prSt.setDate(1, date);
-            prSt.setString(2, user.getId());
-            prSt.setString(3, therapist.getId());
+            User therapist = appointment.getTherapist();
+            User user = appointment.getUser();
+            PreparedStatement prSt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            prSt.setDate(1, new java.sql.Date(appointment.getDate().getTime()));
+            prSt.setString(2, user != null ? user.getId() : null);
+            prSt.setString(3, therapist != null ? therapist.getId() : "3");
             prSt.executeUpdate();
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-    }
-
-    public List<Appointment> getAppointments(User user) {
-        List<Appointment> appointments = new ArrayList<Appointment>();
-
-        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` a left join `%s` u on u.id = a.user_id left join `%s` t on t.id = a.therapist_id where (`user_id` = ? and `date` > %d);", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, Calendar.getInstance().getTimeInMillis());
-
-        try {
-            PreparedStatement prSt = conn.prepareStatement(SQL);
-            prSt.setString(1, user.getId());
-            for (ResultSet st = prSt.executeQuery(); st.next(); ) {
-                appointments.add(new Appointment("", st));
+            ResultSet rs = prSt.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+                appointment.setId(rs.getInt(1));
             }
+            return true;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
 
-        return appointments;
+        return false;
     }
 
-    public List<Appointment> getForDate(Date date) {
+    public List<Appointment> getBetweenDates(long start, long end) {
         List<Appointment> appointments = new ArrayList<Appointment>();
-
-        Calendar calendar = new GregorianCalendar();
-        calendar.setTime(date);
-        long start = calendar.getTimeInMillis();
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
-        long end = calendar.getTimeInMillis();
-
-        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` a left join `%s` u on u.id = a.user_id left join `%s` t on t.id = a.therapist_id where `date` between %d and %d);", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, start, end);
+        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `date` between %d and %d);", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, start, end);
 
         System.out.println("SQL: " + SQL);
         try {
@@ -112,5 +96,59 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         }
 
         return appointments;
+    }
+
+    public List<Appointment> getForUser(User user, long start, long end) {
+        List<Appointment> appointments = new ArrayList<Appointment>();
+        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `user_id` = %s", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, user.getId());
+        if (start > 0) {
+            SQL += " and `date` >= " + start;
+        }
+        if (end > 0) {
+            SQL += " and `date` <= " + end;
+        }
+        SQL += ";";
+
+        System.out.println("SQL: " + SQL);
+        try {
+            PreparedStatement prSt = conn.prepareStatement(SQL);
+            for (ResultSet st = prSt.executeQuery(); st.next(); ) {
+                appointments.add(new Appointment("", st));
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return appointments;
+    }
+
+    public Boolean update(Appointment appointment) {
+
+        String SQL = String.format("update `%s` set `date` = ?, `therapist_id` = %s where `id` = %d;", TABLE_NAME, appointment.getTherapist().getId(), appointment.getId());
+        try {
+            PreparedStatement st = conn.prepareStatement(SQL);
+            st.setDate(1, new java.sql.Date(appointment.getDate().getTime()));
+            st.executeUpdate();
+
+            return true;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return false;
+    }
+
+    public Boolean delete(Appointment appointment) {
+        String SQL = "delete from `" + TABLE_NAME + "` where `id` = " + appointment.getId();
+        try {
+            Statement st = conn.prepareStatement(SQL);
+            st.executeUpdate(SQL);
+
+            return true;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return false;
     }
 }

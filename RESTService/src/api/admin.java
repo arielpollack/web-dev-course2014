@@ -12,8 +12,6 @@ import org.codehaus.jettison.json.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -35,6 +33,7 @@ public class admin {
 
             return JSONResponse.success(user);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -61,6 +60,7 @@ public class admin {
 
             throw new InvalidParameterException();
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -80,8 +80,9 @@ public class admin {
             }
 
             return JSONResponse.error("Insertion error");
-        } catch (Exception exception) {
-            return JSONResponse.error("Exception: " + exception.getMessage());
+        } catch (Exception ex) {
+            System.err.println(ex);
+            return JSONResponse.error("Exception: " + ex.getMessage());
         }
     }
 
@@ -91,12 +92,13 @@ public class admin {
     @GET
     @Path("appointment")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getAllAppointments() {
+    public JSONResponse getBetweenDates(@QueryParam("start") Long start, @QueryParam("end") Long end) {
         try {
-            List<Appointment> appointments = AppointmentsRepository.getForDate(Calendar.getInstance().getTime());
+            List<Appointment> appointments = AppointmentsRepository.getBetweenDates(start != null ? start : 0, end != null ? end : 0);
 
             return JSONResponse.success(appointments);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -104,30 +106,18 @@ public class admin {
     @GET
     @Path("appointment/user/{user_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getUserAppointments(@PathParam("user_id") String userId) {
+    public JSONResponse getUserAppointments(@PathParam("user_id") String userId, @QueryParam("start") Long start, @QueryParam("end") Long end) {
         try {
             User user = UsersRepository.getById(userId);
             if (user == null) {
                 throw new Exception("User not found");
             }
 
-            List<Appointment> appointments = AppointmentsRepository.getForUserAndDate(user, Calendar.getInstance().getTime());
+            List<Appointment> appointments = AppointmentsRepository.getForUser(user, start != null ? start : 0, end != null ? end : 0);
 
             return JSONResponse.success(appointments);
         } catch (Exception ex) {
-            return JSONResponse.error(ex.getMessage());
-        }
-    }
-
-    @GET
-    @Path("appointment/date/{date_in_millies}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getDateAppointments(@PathParam("date_in_millies") String dateMillies) {
-        try {
-            List<Appointment> appointments = AppointmentsRepository.getForDate(new Date(Integer.parseInt(dateMillies)));
-
-            return JSONResponse.success(appointments);
-        } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -144,6 +134,7 @@ public class admin {
 
             return JSONResponse.success(appointment);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -160,6 +151,7 @@ public class admin {
 
             return JSONResponse.success(appointment);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }
@@ -176,6 +168,7 @@ public class admin {
 
             return JSONResponse.success(null);
         } catch (Exception ex) {
+            System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }
     }

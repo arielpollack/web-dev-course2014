@@ -1,6 +1,5 @@
 package filters;
 
-import filters.GenericResponseWrapper;
 import models.User;
 
 import javax.servlet.*;
@@ -25,9 +24,9 @@ public class AdminFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        HttpSession session = ((HttpServletRequest)request).getSession();
+        HttpSession session = ((HttpServletRequest)request).getSession(false);
         User user;
-        if (session == null || (user = (User)session.getAttribute("user")) == null || !user.getIsAdmin()) {
+        if (session == null || (user = (User)session.getAttribute("user")) == null || !user.isAdmin()) {
             GenericResponseWrapper wrapper = new GenericResponseWrapper((HttpServletResponse)response);
             wrapper.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             OutputStream out = response.getOutputStream();

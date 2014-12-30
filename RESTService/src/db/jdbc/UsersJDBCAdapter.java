@@ -45,7 +45,8 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
                     + "`email` varchar(255) not null, "
                     + "`id_number` varchar(11) not null, "
                     + "`phone` varchar(11), "
-                    + "`password` varchar(255) not null,"
+                    + "`password` varchar(255) not null, "
+                    + "`is_admin` int(1) not null, "
                     + "primary key(`id`, `id_number`)"
                     + ") ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_bin;";
             st.executeUpdate(SQL);
@@ -79,6 +80,7 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
     public Boolean update(User user) {
         String SQL = String.format("update `%s` set `fname`=?, `lname`=?, `id_number`=?, `email`=?, `phone`=? where `id`=?;", TABLE_NAME);
         try {
+            System.out.println(user.toString());
             PreparedStatement prSt = conn.prepareStatement(SQL);
             prSt.setString(1, user.getFirstName());
             prSt.setString(2, user.getLastName());
@@ -130,29 +132,6 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
         return null;
     }
 
-    /*
-     * search users by name
-     * @param name The required first OR last name
-     */
-    public List<User> searchUsers(String name) {
-        List<User> users = new ArrayList<User>();
-
-        String SQL = String.format("select * from `%s` where (`fname` like %%?%% or `lname` like %%?%%);", TABLE_NAME);
-        try {
-            PreparedStatement prSt = conn.prepareStatement(SQL);
-            prSt.setString(1, name);
-            prSt.setString(2, name);
-
-            for (ResultSet st = prSt.executeQuery(); st.next(); ) {
-                users.add(new User("", st));
-            }
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-
-        return users;
-    }
-
     public User getUserById(String id) {
         String SQL = "select * from `" + TABLE_NAME + "` where `id` = " + id + ";";
 
@@ -167,5 +146,41 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
         }
 
         return null;
+    }
+
+    public List<User> getByQuery(String query) {
+
+        List<User> users = new ArrayList<User>();
+
+        String SQL = "select * from `" + TABLE_NAME + "` where `fname` like '%" + query + "%' or `lname` like '%" + query + "%';";
+
+        try {
+            Statement st = conn.createStatement();
+
+            for (ResultSet rs = st.executeQuery(SQL); rs.next(); ) {
+                users.add(new User("", rs));
+            }
+
+            return users;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return null;
+    }
+
+    public Boolean delete(User user) {
+        String SQL = "delete from `" + TABLE_NAME + "` where `id` = " + user.getId();
+
+        try {
+            Statement st = conn.createStatement();
+            st.executeQuery(SQL);
+
+            return true;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return false;
     }
 }

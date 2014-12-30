@@ -15,6 +15,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
     static AppointmentsRedisAdapter sharedInstance;
 
     protected static final String UID_Prefix = "apt:";
+    protected static final String APTS_KEY = "appointments";
 
     static Genson genson;
 
@@ -31,45 +32,19 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
         super();
     }
 
-    public List<Appointment> getToday() {
+    public List<Appointment> getForUser(User user, long start, long end) {
         List<Appointment> appointments = new ArrayList<Appointment>();
 
-        Calendar calendar = new GregorianCalendar();
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
-        long now = calendar.getTimeInMillis();
-
-        calendar.set(Calendar.HOUR_OF_DAY, 0);
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
-        long tomorrow = calendar.getTimeInMillis();
-
-        System.out.println(now + " " + tomorrow);
-        Set<String> keys = jedis.zrangeByScore("apts:daily", now, tomorrow);
-        System.out.println(keys);
-
-        for (String key : keys) {
-            Appointment appointment = getAppointmentForKey(key);
-            if (appointment != null) {
-                appointments.add(appointment);
-            }
-        }
-
-        return appointments;
-    }
-
-    public List<Appointment> getForUser(User user, Date startDate, Date endDate) {
-        List<Appointment> appointments = new ArrayList<Appointment>();
-
-        String from = startDate != null ? String.valueOf(startDate.getTime()) : "-inf";
-        String to = endDate != null ? String.valueOf(endDate.getTime()) : "+inf";
+        String from = start > 0 ? String.valueOf(start) : "-inf";
+        String to = end > 0 ? String.valueOf(end) : "+inf";
         Set<String> keys = jedis.zrangeByScore(UsersRedisAdapter.UID_Prefix + user.getId() + ":appointments", from, to);
 
-        System.out.println("Fetching for user " + user.getId() + " from " + from + " to " + to);
-        Genson genson = new Genson();
         for (String key : keys) {
             Appointment appointment = getAppointmentForKey(key);
             if (appointment != null) {
                 appointments.add(appointment);
+            } else {
+                System.err.println(key + " was not found");
             }
         }
 
@@ -86,7 +61,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
 
         // hash map appointment object
         HashMap<String, String> hash = new HashMap<String, String>();
-        hash.put("json", new Genson().serialize(appointment));
+        hash.put("json", genson.serialize(appointment));
         hash.put("user", userRedisId);
         hash.put("therapist", therapistRedisId);
         hash.put("date", String.valueOf(time));
@@ -94,7 +69,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
         // insert all data into redis
         Transaction t = jedis.multi();
         t.hmset(redisAptId, hash);
-        t.zadd("apts:daily", time, redisAptId);
+        t.zadd(APTS_KEY, time, redisAptId);
         t.zadd(userRedisId + ":appointments", time, redisAptId);
         t.zadd(therapistRedisId + ":given_appointments", time, redisAptId);
         return (t.exec().size() > 0);
@@ -106,19 +81,62 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
         }
 
         String json = jedis.hget(key, "json");
-        System.out.println(json);
-        Appointment appointment = genson.deserialize(json, Appointment.class);
+        if (json == null || json.length() == 0) {
+            return null;
+        }
+
+        Appointment appointment = new Genson().deserialize(json, Appointment.class);
         String userKey = jedis.hget(key, "user");
         String therapistKey = jedis.hget(key, "therapist");
         if (userKey != null) {
-            User user = genson.deserialize(jedis.get(userKey), User.class);
-            appointment.setUser(user);
+            String userJson = jedis.get(userKey);
+            if (userJson != null) {
+                User user = genson.deserialize(userJson, User.class);
+                appointment.setUser(user);
+            }
         }
         if (therapistKey != null) {
-            User therapist = genson.deserialize(jedis.get(therapistKey), User.class);
-            appointment.setTherapist(therapist);
+            String therapistJson = jedis.get(therapistKey);
+            if (therapistJson != null) {
+                User therapist = genson.deserialize(therapistJson, User.class);
+                appointment.setTherapist(therapist);
+            }
+        }
+        return appointment;
+    }
+
+    public Appointment getById(String id) {
+        return getAppointmentForKey(UID_Prefix + id);
+    }
+
+    public List<Appointment> getBetweenDates(long start, long end) {
+        List<Appointment> appointments = new ArrayList<Appointment>();
+
+        Set<String> keys = jedis.zrangeByScore(APTS_KEY, start, end);
+
+        for (String key : keys) {
+            Appointment appointment = getAppointmentForKey(key);
+            if (appointment != null) {
+                appointments.add(appointment);
+            } else { // appointment not exist anymore
+                jedis.zrem(key);
+            }
         }
 
-        return appointment;
+        return appointments;
+    }
+
+    public Boolean delete(Appointment appointment) {
+        // objects keys
+        String userRedisId = UsersRedisAdapter.UID_Prefix + appointment.getUser().getId();
+        String therapistRedisId = UsersRedisAdapter.UID_Prefix + appointment.getTherapist().getId();
+        String redisAptId = UID_Prefix + appointment.getId();
+
+        Transaction t = jedis.multi();
+        t.hdel(redisAptId);
+        t.zrem(APTS_KEY, redisAptId);
+        t.zrem(userRedisId + ":appointments", redisAptId);
+        t.zrem(therapistRedisId + ":given_appointments", redisAptId);
+        return (t.exec().size() > 0);
     }
 }
