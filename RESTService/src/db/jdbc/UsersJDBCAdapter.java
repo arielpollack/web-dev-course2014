@@ -1,7 +1,6 @@
-package adapters;
+package db.jdbc;
 
 import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,13 +8,27 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
+import db.DBManager;
+import db.Utils;
 import models.*;
 
 public class UsersJDBCAdapter extends BaseJDBCAdepter {
+    static private UsersJDBCAdapter sharedInstance;
+
     static public final String TABLE_NAME = "tbl_user";
 
-    public UsersJDBCAdapter() {
+    static {
+        sharedInstance = new UsersJDBCAdapter();
+        sharedInstance.createTable();
+        System.out.println("------ Users table created ------");
+    }
+
+    private UsersJDBCAdapter() {
         super();
+    }
+
+    public static UsersJDBCAdapter getInstance() {
+        return sharedInstance;
     }
 
     @Override

@@ -1,5 +1,7 @@
-import adapters.AppointmentsJDBCAdapter;
-import adapters.UsersJDBCAdapter;
+import db.UsersRepository;
+import db.jdbc.AppointmentsJDBCAdapter;
+import db.jdbc.UsersJDBCAdapter;
+import db.redis.UsersRedisAdapter;
 import com.owlike.genson.Genson;
 import models.Appointment;
 import models.JSONResponse;
@@ -16,17 +18,19 @@ import java.util.List;
 
 @Path("users")
 public class users {
-    @POST
+
+    //=========================================================================================
+    // Auth
+    //=========================================================================================
+    @POST @Path("login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public JSONResponse postLogin(@Context HttpServletRequest request, HashMap<String, String> login) {
-        UsersJDBCAdapter usersAdapter = new UsersJDBCAdapter();
-
-        User user = usersAdapter.getUser(login.get("id_number"), login.get("password"));
+        User user = UsersRepository.getInstance().getForIdAndPassword(login.get("id_number"), login.get("password"));
         if (user != null) {
             request.getSession().setAttribute("user", user);
 
-            List<Appointment> appointments = new AppointmentsJDBCAdapter().getAppointments(user);
+            List<Appointment> appointments = Appo.getAppointments(user);
 
             HashMap<String, Object> data = new HashMap<String, Object>();
             data.put("appointments", appointments);
@@ -37,7 +41,10 @@ public class users {
         }
     }
 
-    @PUT
+    //=========================================================================================
+    // Profile
+    //=========================================================================================
+    @PUT @Path("update")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public JSONResponse updateUser(@Context HttpServletRequest request, User user) {
@@ -54,30 +61,44 @@ public class users {
         }
 
         if (usersAdapter.update(user)) {
+            if (new UsersRedisAdapter().insert(user, null)) {
+                System.out.println("User " + user.getId() + " was updated on Redis");
+            } else {
+                System.err.println("User " + user.getId() + " was updated on Redis");
+            }
+
             return JSONResponse.success(user);
         }
 
         return JSONResponse.error("SQL update error");
     }
 
-    @POST
-    @Path("signup")
+    //=========================================================================================
+    // Appointments
+    //=========================================================================================
+    @GET @Path("appointment")
+    @Produces(MediaType.APPLICATION_JSON)
+    public JSONResponse getAllAppointments() {
+
+    }
+
+    @GET @Path("appointment/date/{date_in_millies}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public JSONResponse getDateAppointments(@PathParam("date_in_millies") String dateMillies) {
+
+    }
+
+    @POST @Path("appointment")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse postSignup(@Context HttpServletRequest request, HashMap<String, Object> obj) {
-        try {
-            User user = new Genson().deserialize(new JSONObject((HashMap<String, String>) obj.get("user")).toString(), User.class);
-            String password = (String) obj.get("password");
+    public JSONResponse createAppointment(Appointment appointment) {
 
-            if (new UsersJDBCAdapter().insert(user, password)) {
-                request.getSession().setAttribute("user", user);
-                return JSONResponse.success(user);
-            }
+    }
 
-            return JSONResponse.error("SQL insertion failed");
-        } catch (Exception exception) {
-            System.out.println(obj);
-            return JSONResponse.error("Exception: " + exception.getMessage());
-        }
+    @PUT @Path("appointment")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public JSONResponse updateAppointment(Appointment appointment) {
+
     }
 }

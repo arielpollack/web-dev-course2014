@@ -1,5 +1,6 @@
-package adapters;
+package db.redis;
 
+import db.DBManager;
 import redis.clients.jedis.Jedis;
 
 /**

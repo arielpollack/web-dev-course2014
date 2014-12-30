@@ -1,4 +1,4 @@
-package adapters;
+package db.redis;
 
 import com.owlike.genson.Genson;
 import models.Appointment;
@@ -12,10 +12,22 @@ import java.util.*;
  */
 
 public class AppointmentsRedisAdapter extends BaseRedisAdapter {
-    protected static final String UID_Prefix = "apt:";
-    static Genson genson = new Genson();
+    static AppointmentsRedisAdapter sharedInstance;
 
-    public AppointmentsRedisAdapter() {
+    protected static final String UID_Prefix = "apt:";
+
+    static Genson genson;
+
+    static {
+        sharedInstance = new AppointmentsRedisAdapter();
+        genson = new Genson();
+    }
+
+    public static AppointmentsRedisAdapter getInstance() {
+        return sharedInstance;
+    }
+
+    private AppointmentsRedisAdapter() {
         super();
     }
 

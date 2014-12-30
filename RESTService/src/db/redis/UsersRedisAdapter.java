@@ -1,8 +1,7 @@
-package adapters;
+package db.redis;
 
 import com.owlike.genson.Genson;
 import models.User;
-import models.UserBuilder;
 import redis.clients.jedis.Transaction;
 
 /**
@@ -11,9 +10,19 @@ import redis.clients.jedis.Transaction;
 
 public class UsersRedisAdapter extends BaseRedisAdapter {
 
+    private static UsersRedisAdapter sharedInstance;
+
     protected static final String UID_Prefix = "user:";
 
-    public UsersRedisAdapter() {
+    static {
+        sharedInstance = new UsersRedisAdapter();
+    }
+
+    public static UsersRedisAdapter getInstance() {
+        return sharedInstance;
+    }
+
+    private UsersRedisAdapter() {
         super();
     }
 

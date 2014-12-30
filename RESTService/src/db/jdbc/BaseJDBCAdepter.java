@@ -1,4 +1,6 @@
-package adapters;
+package db.jdbc;
+
+import db.DBManager;
 
 import java.sql.Connection;
 

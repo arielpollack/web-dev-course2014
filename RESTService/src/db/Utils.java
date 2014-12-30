@@ -1,11 +1,11 @@
-package adapters;
+package db;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Utils {
 
-	static String sha1(String input) throws NoSuchAlgorithmException 
+	public static String sha1(String input) throws NoSuchAlgorithmException
 	{
         MessageDigest mDigest = MessageDigest.getInstance("SHA1");
         byte[] result = mDigest.digest(input.getBytes());

@@ -1,4 +1,4 @@
-package adapters;
+package db;
 
 import redis.clients.jedis.Jedis;
 
