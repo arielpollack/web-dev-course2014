@@ -152,4 +152,20 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
 
         return users;
     }
+
+    public User getUserById(String id) {
+        String SQL = "select * from `" + TABLE_NAME + "` where `id` = " + id + ";";
+
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            if (rs.next()) {
+                return new User("", rs);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return null;
+    }
 }

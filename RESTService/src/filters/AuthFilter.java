@@ -1,3 +1,5 @@
+package filters;
+
 import filters.GenericResponseWrapper;
 import models.User;
 
@@ -10,9 +12,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * Servlet Filter implementation class AuthFilter
+ * Servlet Filter implementation class filters.AuthFilter
  */
-@WebFilter("/AuthFilter")
+@WebFilter("/filters.AuthFilter")
 public class AuthFilter implements Filter {
 
     /**

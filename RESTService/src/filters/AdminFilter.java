@@ -1,3 +1,5 @@
+package filters;
+
 import filters.GenericResponseWrapper;
 import models.User;
 
@@ -14,7 +16,7 @@ import java.util.logging.Logger;
 /**
  * Created by arielpollack on 12/29/14.
  */
-@WebFilter("/AdminFilter")
+@WebFilter("/filters.AdminFilter")
 public class AdminFilter implements Filter {
 
     public void init(FilterConfig fConfig) throws ServletException {

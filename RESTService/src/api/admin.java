@@ -1,8 +1,10 @@
+package api;
+
 import com.owlike.genson.Genson;
 import db.AppointmentsRepository;
 import db.UsersRepository;
-import db.jdbc.AppointmentsJDBCAdapter;
-import db.jdbc.UsersJDBCAdapter;
+import exceptions.InvalidParameterException;
+import exceptions.UserNotFoundException;
 import models.Appointment;
 import models.JSONResponse;
 import models.User;
@@ -17,8 +19,6 @@ import java.util.List;
 
 @Path("admin")
 public class admin {
-    UsersJDBCAdapter usersAdapter = null;
-    AppointmentsJDBCAdapter appointmentsAdapter = null;
 
     //=========================================================================================
     // Users
@@ -27,7 +27,16 @@ public class admin {
     @Path("user/{user_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse getUserById(@PathParam("user_id") String userId) {
+        try {
+            User user = UsersRepository.getById(userId);
+            if (user == null) {
+                throw new UserNotFoundException();
+            }
 
+            return JSONResponse.success(user);
+        } catch (Exception ex) {
+            return JSONResponse.error(ex.getMessage());
+        }
     }
 
     @GET
@@ -35,7 +44,25 @@ public class admin {
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse getUserByQuery(@QueryParam("query") String query,
                                        @QueryParam("id_number") String idNumber) {
+        try {
+            if (query != null && query.length() != 0) {
+                List<User> users = UsersRepository.getByQuery(query);
+                return JSONResponse.success(users);
+            }
 
+            if (idNumber != null && idNumber.length() != 0) {
+                User user = UsersRepository.getByIdNumber(idNumber);
+                if (user == null) {
+                    throw new UserNotFoundException();
+                }
+
+                return JSONResponse.success(user);
+            }
+
+            throw new InvalidParameterException();
+        } catch (Exception ex) {
+            return JSONResponse.error(ex.getMessage());
+        }
     }
 
     @POST
@@ -52,9 +79,8 @@ public class admin {
                 return JSONResponse.success(user);
             }
 
-            return JSONResponse.error("SQL insertion failed");
+            return JSONResponse.error("Insertion error");
         } catch (Exception exception) {
-            System.err.println("Exception: " + exception.getMessage() + "\n for object: " + obj);
             return JSONResponse.error("Exception: " + exception.getMessage());
         }
     }
@@ -113,10 +139,10 @@ public class admin {
     public JSONResponse createAppointment(Appointment appointment) {
         try {
             if (!AppointmentsRepository.insert(appointment)) {
-                throw new Exception()
+                return JSONResponse.error("Insertion error");
             }
 
-            return JSONResponse.success(appointments);
+            return JSONResponse.success(appointment);
         } catch (Exception ex) {
             return JSONResponse.error(ex.getMessage());
         }
@@ -127,7 +153,15 @@ public class admin {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse updateAppointment(Appointment appointment) {
+        try {
+            if (!AppointmentsRepository.update(appointment)) {
+                return JSONResponse.error("Update error");
+            }
 
+            return JSONResponse.success(appointment);
+        } catch (Exception ex) {
+            return JSONResponse.error(ex.getMessage());
+        }
     }
 
     @DELETE
@@ -135,6 +169,14 @@ public class admin {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse deleteAppointment(Appointment appointment) {
+        try {
+            if (!AppointmentsRepository.delete(appointment)) {
+                return JSONResponse.error("Delete error");
+            }
 
+            return JSONResponse.success(null);
+        } catch (Exception ex) {
+            return JSONResponse.error(ex.getMessage());
+        }
     }
 }

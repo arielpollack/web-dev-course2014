@@ -13,8 +13,8 @@ import java.util.List;
 public class UsersRepository {
 
     static private UsersRepository sharedInstance;
-    private UsersJDBCAdapter jdbsAdapter;
-    private UsersRedisAdapter redisAdapter;
+    static private UsersJDBCAdapter jdbsAdapter;
+    static private UsersRedisAdapter redisAdapter;
 
     static {
         sharedInstance = new UsersRepository();
@@ -26,11 +26,23 @@ public class UsersRepository {
     }
 
     static public User getById(String id) {
+        User user = redisAdapter.getUserById(id);
+        if (user == null) {
+            user = jdbsAdapter.getUserById(id);
+            redisAdapter.insert(user, null);
+        }
 
+        return user;
     }
 
-    static public User getForIdAndPassword(String id, String password) {
+    static public User getForIdNumberAndPassword(String idNumber, String password) {
+        User user = redisAdapter.getUserByIdNumberAndPassword(idNumber, password);
+        if (user == null) {
+            user = jdbsAdapter.getUserByIdA(idNumber);
+            redisAdapter.insert(user, null);
+        }
 
+        return user;
     }
 
     static public List<User> getByQuery(String query) {
@@ -49,4 +61,7 @@ public class UsersRepository {
 
     }
 
+    public static User getByIdNumber(String idNumber) {
+
+    }
 }
