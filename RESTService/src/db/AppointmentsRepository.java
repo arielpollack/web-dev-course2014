@@ -56,16 +56,17 @@ public class AppointmentsRepository {
         return appointments;
     }
 
-    static public Boolean insert(Appointment appointment) {
-        if (!jdbsAdapter.insert(appointment)) {
-            return false;
+    static public Appointment insert(Appointment appointment) {
+        Appointment newAppointment;
+        if ((newAppointment = jdbsAdapter.insert(appointment)) == null) {
+            return null;
         }
 
-        if (!redisAdapter.insert(appointment)) {
+        if (!redisAdapter.insert(newAppointment)) {
             System.out.println("Insert to Redis failed");
         }
 
-        return true;
+        return newAppointment;
     }
 
     static public Boolean update(Appointment appointment) {

@@ -28,7 +28,9 @@ public class UsersRepository {
         }
 
         user = jdbsAdapter.getUserById(id);
-        redisAdapter.insert(user, null);
+        if (user != null) {
+            redisAdapter.insert(user, null);
+        }
 
         return user;
     }
@@ -40,7 +42,9 @@ public class UsersRepository {
         }
 
         user = jdbsAdapter.getUser(idNumber);
-        redisAdapter.insert(user, null);
+        if (user != null) {
+            redisAdapter.insert(user, null);
+        }
 
         return user;
     }
@@ -52,7 +56,9 @@ public class UsersRepository {
         }
 
         user = jdbsAdapter.getUser(idNumber, password);
-        redisAdapter.insert(user, password);
+        if (user != null) {
+            redisAdapter.insert(user, password);
+        }
 
         return user;
     }

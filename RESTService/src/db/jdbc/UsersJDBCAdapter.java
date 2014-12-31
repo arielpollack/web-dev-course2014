@@ -58,7 +58,7 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
     public Boolean insert(User user, String pwd) {
         String SQL = String.format("insert into `%s` (`fname`, `lname`, `id_number`, `password`, `email`, `phone`) values(?,?,?,?,?,?);", TABLE_NAME);
         try {
-            PreparedStatement prSt = conn.prepareStatement(SQL);
+            PreparedStatement prSt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             prSt.setString(1, user.getFirstName());
             prSt.setString(2, user.getLastName());
             prSt.setString(3, user.getIdNumber());
@@ -66,6 +66,10 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
             prSt.setString(5, user.getEmail());
             prSt.setString(6, user.getPhone());
             prSt.executeUpdate();
+            ResultSet rs = prSt.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+                user.setId(rs.getInt(1));
+            }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             return false;
@@ -152,7 +156,8 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
 
         List<User> users = new ArrayList<User>();
 
-        String SQL = "select * from `" + TABLE_NAME + "` where `fname` like '%" + query + "%' or `lname` like '%" + query + "%';";
+        query = query.toLowerCase();
+        String SQL = "select * from `" + TABLE_NAME + "` where Lcase(`fname`) like '%" + query + "%' or Lcase(`lname`) like '%" + query + "%';";
 
         try {
             Statement st = conn.createStatement();

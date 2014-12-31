@@ -128,11 +128,12 @@ public class admin {
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse createAppointment(Appointment appointment) {
         try {
-            if (!AppointmentsRepository.insert(appointment)) {
+            Appointment newAppointment;
+            if ((newAppointment = AppointmentsRepository.insert(appointment)) == null) {
                 return JSONResponse.error("Insertion error");
             }
 
-            return JSONResponse.success(appointment);
+            return JSONResponse.success(newAppointment);
         } catch (Exception ex) {
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());

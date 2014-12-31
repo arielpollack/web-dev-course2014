@@ -59,7 +59,7 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         }
     }
 
-    public Boolean insert(Appointment appointment) {
+    public Appointment insert(Appointment appointment) {
         String SQL = String.format("insert into `%s` (`date`, `user_id`, `therapist_id`) values(?,?,?);", TABLE_NAME);
         try {
             User therapist = appointment.getTherapist();
@@ -71,14 +71,33 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
             prSt.executeUpdate();
             ResultSet rs = prSt.getGeneratedKeys();
             if (rs != null && rs.next()) {
-                appointment.setId(rs.getInt(1));
+                return getById(rs.getInt(1));
             }
-            return true;
+
+            return null;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
 
-        return false;
+        return null;
+    }
+
+    public Appointment getById(Integer id) {
+        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where a.id = %d;", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, id);
+
+        System.out.println("SQL: " + SQL);
+        try {
+            PreparedStatement prSt = conn.prepareStatement(SQL);
+            ResultSet rs = prSt.executeQuery();
+            if (rs.next()) {
+                return new Appointment("", rs);
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return null;
     }
 
     public List<Appointment> getBetweenDates(long start, long end) {

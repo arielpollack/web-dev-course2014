@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f093a983-9db3-4d36-a271-c138ae6ab147" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/filters/AdminFilter.java" afterPath="$PROJECT_DIR$/RESTService/src/filters/AdminFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/models/Appointment.java" afterPath="$PROJECT_DIR$/RESTService/src/models/Appointment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java" afterPath="$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java" afterPath="$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" afterPath="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/models/User.java" afterPath="$PROJECT_DIR$/RESTService/src/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/models/UserBuilder.java" afterPath="$PROJECT_DIR$/RESTService/src/models/UserBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java" afterPath="$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/redis/UsersRedisAdapter.java" afterPath="$PROJECT_DIR$/RESTService/src/db/redis/UsersRedisAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/UsersRepository.java" afterPath="$PROJECT_DIR$/RESTService/src/db/UsersRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/api/admin.java" afterPath="$PROJECT_DIR$/RESTService/src/api/admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/arielpollack.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/arielpollack.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/api/users.java" afterPath="$PROJECT_DIR$/RESTService/src/api/users.java" />
     </list>
     <ignored path="APTManage.iws" />
@@ -47,10 +41,26 @@
       <file leaf-file-name="UsersRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RESTService/src/db/UsersRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="1710">
-              <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="826" max-vertical-offset="1800">
+              <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppointmentsJDBCAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="2445">
+              <caret line="81" column="20" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+              <folding>
+                <element signature="e#4171#4184#0" expanded="true" />
+                <element signature="e#5274#5287#0" expanded="true" />
+                <marker date="1420009887000" expanded="true" signature="1127:1520" placeholder="create table..if..." />
+                <marker date="1420009887000" expanded="true" signature="1640:1803" placeholder="alter table ..." />
+                <marker date="1420009887000" expanded="true" signature="7057:7103" placeholder="delete from ..." />
               </folding>
             </state>
           </provider>
@@ -59,8 +69,8 @@
       <file leaf-file-name="admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RESTService/src/api/admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="2715">
-              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="2730">
+              <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,21 +78,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersJDBCAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java">
+      <file leaf-file-name="users.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/api/users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42199108" vertical-offset="1306" max-vertical-offset="2160">
-              <caret line="154" column="111" selection-start-line="154" selection-start-column="111" selection-end-line="154" selection-end-column="111" />
+            <state vertical-scroll-proportion="0.6627043" vertical-offset="964" max-vertical-offset="1920">
+              <caret line="108" column="56" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
               <folding>
-                <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
-                <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
-                <element signature="e#5236#5242#0" expanded="true" />
-                <marker date="1419981267000" expanded="true" signature="1056:1682" placeholder="create table..if..." />
-                <marker date="1419981267000" expanded="true" signature="4761:4809" placeholder="select * fro..." />
-                <marker date="1419981267000" expanded="true" signature="5269:5373" placeholder="select * fro..." />
-                <marker date="1419981267000" expanded="true" signature="5269:5374" placeholder="select * fro..." />
-                <marker date="1419981267000" expanded="true" signature="5269:5375" placeholder="select * fro..." />
-                <marker date="1419981267000" expanded="true" signature="5785:5831" placeholder="delete from ..." />
+                <element signature="method#checkCredentials#0;class#users#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppointmentsRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="559" max-vertical-offset="1515">
+              <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,16 +142,16 @@
         <option value="$PROJECT_DIR$/RESTService/src/exceptions/NoCredentialsException.java" />
         <option value="$PROJECT_DIR$/RESTService/src/users.java" />
         <option value="$PROJECT_DIR$/RESTService/src/db/redis/UsersRedisAdapter.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/db/UsersRepository.java" />
         <option value="$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/api/users.java" />
         <option value="$PROJECT_DIR$/RESTService/src/models/Appointment.java" />
         <option value="$PROJECT_DIR$/RESTService/src/filters/AdminFilter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/db/UsersRepository.java" />
         <option value="$PROJECT_DIR$/RESTService/src/models/User.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/api/admin.java" />
         <option value="$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/api/admin.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/api/users.java" />
       </list>
     </option>
   </component>
@@ -812,12 +826,12 @@
       <workItem from="1419682639514" duration="393000" />
       <workItem from="1419683099546" duration="21184000" />
       <workItem from="1419953446306" duration="3361000" />
-      <workItem from="1419961448653" duration="16809000" />
+      <workItem from="1419961448653" duration="18937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60067000" />
+    <option name="totallyTimeSpent" value="62195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-130" y="-1057" width="1920" height="1053" extended-state="6" />
@@ -907,11 +921,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1035">
           <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
           <folding>
-            <element signature="e#3201#3214#0" expanded="true" />
-            <element signature="e#4304#4317#0" expanded="true" />
-            <marker date="1419981020000" expanded="true" signature="-1:-1" placeholder="create table..if..." />
-            <marker date="1419981020000" expanded="true" signature="-1:-1" placeholder="alter table ..." />
-            <marker date="1419981020000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <element signature="e#4171#4184#0" expanded="true" />
+            <element signature="e#5274#5287#0" expanded="true" />
+            <marker date="1420009887000" expanded="true" signature="1127:1520" placeholder="create table..if..." />
+            <marker date="1420009887000" expanded="true" signature="1640:1803" placeholder="alter table ..." />
+            <marker date="1420009887000" expanded="true" signature="7057:7103" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -921,15 +935,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="750">
           <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
           <folding>
-            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
-            <element signature="e#5236#5242#0" expanded="true" />
-            <marker date="1419981267000" expanded="true" signature="1056:1682" placeholder="create table..if..." />
-            <marker date="1419981267000" expanded="true" signature="4761:4809" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5373" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5374" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5375" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5785:5831" placeholder="delete from ..." />
+            <element signature="e#5420#5426#0" expanded="true" />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="create table..if..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -967,15 +978,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
           <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
           <folding>
-            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
-            <element signature="e#5236#5242#0" expanded="true" />
-            <marker date="1419981267000" expanded="true" signature="1056:1682" placeholder="create table..if..." />
-            <marker date="1419981267000" expanded="true" signature="4761:4809" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5373" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5374" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5375" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5785:5831" placeholder="delete from ..." />
+            <element signature="e#5420#5426#0" expanded="true" />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="create table..if..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -1018,15 +1026,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
           <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
           <folding>
-            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
-            <element signature="e#5236#5242#0" expanded="true" />
-            <marker date="1419981267000" expanded="true" signature="1056:1682" placeholder="create table..if..." />
-            <marker date="1419981267000" expanded="true" signature="4761:4809" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5373" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5374" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5375" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5785:5831" placeholder="delete from ..." />
+            <element signature="e#5420#5426#0" expanded="true" />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="create table..if..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -1237,36 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="1500">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/api/users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7102526" vertical-offset="1232" max-vertical-offset="1905">
-          <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
-          <folding>
-            <element signature="method#checkCredentials#0;class#users#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/filters/AdminFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="765">
-          <caret line="28" column="93" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/RESTService/web/WEB-INF/lib/genson-1.1.jar!/com/owlike/genson/annotation/JsonConverter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23148148" vertical-offset="0" max-vertical-offset="648">
@@ -1295,31 +1270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1365">
-          <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
-          <folding>
-            <element signature="e#2625#2626#0" expanded="true" />
-            <element signature="e#2660#2661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6212121" vertical-offset="1460" max-vertical-offset="2160">
-          <caret line="85" column="222" selection-start-line="85" selection-start-column="222" selection-end-line="85" selection-end-column="222" />
-          <folding>
-            <element signature="e#3201#3214#0" expanded="true" />
-            <element signature="e#4304#4317#0" expanded="true" />
-            <marker date="1419981020000" expanded="true" signature="-1:-1" placeholder="create table..if..." />
-            <marker date="1419981020000" expanded="true" signature="-1:-1" placeholder="alter table ..." />
-            <marker date="1419981020000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/db/redis/UsersRedisAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44427934" vertical-offset="286" max-vertical-offset="1575">
@@ -1328,20 +1278,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/api/admin.java">
+    <entry file="file://$PROJECT_DIR$/RESTService/src/filters/AdminFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="2715">
-          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.8885587" vertical-offset="77" max-vertical-offset="765">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84398216" vertical-offset="692" max-vertical-offset="1395">
+          <caret line="119" column="37" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+          <folding>
+            <element signature="e#2816#2817#0" expanded="true" />
+            <element signature="e#2860#2861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/db/UsersRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="1710">
-          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="826" max-vertical-offset="1800">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1350,18 +1311,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42199108" vertical-offset="1306" max-vertical-offset="2160">
-          <caret line="154" column="111" selection-start-line="154" selection-start-column="111" selection-end-line="154" selection-end-column="111" />
+        <state vertical-scroll-proportion="0.15453194" vertical-offset="586" max-vertical-offset="2535">
+          <caret line="60" column="97" selection-start-line="60" selection-start-column="97" selection-end-line="60" selection-end-column="97" />
           <folding>
-            <element signature="method#insert#0;class#UsersJDBCAdapter#0" expanded="false" />
             <element signature="method#getUser#1;class#UsersJDBCAdapter#0" expanded="false" />
-            <element signature="e#5236#5242#0" expanded="true" />
-            <marker date="1419981267000" expanded="true" signature="1056:1682" placeholder="create table..if..." />
-            <marker date="1419981267000" expanded="true" signature="4761:4809" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5373" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5374" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5269:5375" placeholder="select * fro..." />
-            <marker date="1419981267000" expanded="true" signature="5785:5831" placeholder="delete from ..." />
+            <element signature="e#5420#5426#0" expanded="true" />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="create table..if..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1419982275000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="2445">
+          <caret line="81" column="20" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+          <folding>
+            <element signature="e#4171#4184#0" expanded="true" />
+            <element signature="e#5274#5287#0" expanded="true" />
+            <marker date="1420009887000" expanded="true" signature="1127:1520" placeholder="create table..if..." />
+            <marker date="1420009887000" expanded="true" signature="1640:1803" placeholder="alter table ..." />
+            <marker date="1420009887000" expanded="true" signature="7057:7103" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="559" max-vertical-offset="1515">
+          <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/api/admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="2730">
+          <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/api/users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6627043" vertical-offset="964" max-vertical-offset="1920">
+          <caret line="108" column="56" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
+          <folding>
+            <element signature="method#checkCredentials#0;class#users#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -115,4 +115,8 @@ public class User {
     public String toString() {
         return "{ id = " + id + ",name = " + getFullName() + " }";
     }
+
+    public void setId(Integer id) {
+        this.id = String.valueOf(id);
+    }
 }

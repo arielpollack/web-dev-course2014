@@ -101,11 +101,12 @@ public class users {
                 appointment.setTherapist(UsersRepository.getById("3")); // set the temporary therapist
             }
 
-            if (!AppointmentsRepository.insert(appointment)) {
+            Appointment newAppointment;
+            if ((newAppointment = AppointmentsRepository.insert(appointment)) == null) {
                 return JSONResponse.error("Insert error");
             }
 
-            return JSONResponse.success(appointment);
+            return JSONResponse.success(newAppointment);
         } catch (Exception ex) {
             System.err.println(ex);
             ex.printStackTrace();
