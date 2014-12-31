@@ -28,11 +28,6 @@ public class User {
     String phone;
     String email;
 
-    @JsonProperty("preferred_days")
-    List<String> preferredDays;
-    @JsonProperty("preferred_hours")
-    List<String> preferredHours;
-
     @XmlElement(name="is_admin")
     @JsonProperty("is_admin")
     Boolean isAdmin;

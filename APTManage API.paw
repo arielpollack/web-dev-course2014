@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>D570B088-200E-462B-A23A-40C86569CFE8</UUID>
-        <nextObjectID>162</nextObjectID>
+        <nextObjectID>164</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -80,7 +80,7 @@
         <attribute name="uuid" type="string">F232D430-4706-4456-84D9-11DDA439A89C</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Default Domain</attribute>
-        <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z154 z146"></relationship>
+        <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z146 z154"></relationship>
         <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z148 z152 z147"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z104">
@@ -102,8 +102,8 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">["{\\n  \\"date\\": \\"1420108200000\\"\\n}"]</attribute>
-        <attribute name="order" type="int64">1</attribute>
+        <attribute name="body" type="string">["{\\n  \\"date\\": \\"1420020000000\\"\\n}"]</attribute>
+        <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">Create Appointment</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z141"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
@@ -299,11 +299,11 @@
         <attribute name="method" type="string">PUT</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
         <attribute name="body" type="string">["{\\n  \\"date\\": 1420777895000,\\n  \\"id\\": 1,\\n  \\"therapist\\": {\\n    \\"id\\": \\"1\\"\\n  }\\n}"]</attribute>
-        <attribute name="order" type="int64">2</attribute>
+        <attribute name="order" type="int64">3</attribute>
         <attribute name="name" type="string">Update Appointment</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z141"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z138"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z138 z110"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z122">
         <attribute name="value" type="string"></attribute>
@@ -509,7 +509,7 @@
         <attribute name="order" type="int64">4</attribute>
         <attribute name="name" type="string">Appointments</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z123"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z105 z121 z118"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z118 z121 z105 z163"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -533,20 +533,6 @@
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
-    </object>
-    <object type="LMENVIRONMENTDOMAIN" id="z144">
-        <attribute name="uuid" type="string">45FE06B9-E6AA-4A0F-925D-CD239377A2EC</attribute>
-        <attribute name="order" type="int64">1</attribute>
-        <attribute name="name" type="string">Environment Domain 2</attribute>
-        <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z145"></relationship>
-        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE"></relationship>
-    </object>
-    <object type="LMENVIRONMENT" id="z145">
-        <attribute name="uuid" type="string">4B223998-827A-4333-8201-419857485EAA</attribute>
-        <attribute name="order" type="int64">0</attribute>
-        <attribute name="name" type="string">Default Environment</attribute>
-        <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z144"></relationship>
-        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE"></relationship>
     </object>
     <object type="LMENVIRONMENT" id="z146">
         <attribute name="uuid" type="string">99C2F852-A923-4912-886C-B70F20813E71</attribute>
@@ -647,5 +633,31 @@
         <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z160"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z163">
+        <attribute name="uuid" type="string">0061D6A4-9115-4491-974A-5868E77B71E2</attribute>
+        <attribute name="url" type="string">["http:\\/\\/",{"data":{"environmentVariable":"9D92CC8C-F28A-4A49-B190-18680B228B93"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},":",{"data":{"environmentVariable":"CA6B9514-9A1A-463C-99B9-45833E0D251A"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"CCDEF7EE-ECEE-490B-855F-156B9A58080C"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/users\\/appointment\\/available"]</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">GET</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="body" type="string">[{"data":{"json":"{\\"email\\":\\"ariel@zeek.me\\",\\"first_name\\":\\"Ariel\\",\\"id\\":\\"1\\",\\"id_number\\":\\"301784898\\",\\"last_name\\":\\"P to the K\\",\\"phone\\":null,\\"preferred_days\\":null,\\"preferred_hours\\":null}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string">Available times</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z141"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z164"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z164">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z163"></relationship>
     </object>
 </database>

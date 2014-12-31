@@ -2,7 +2,9 @@ package db.redis;
 
 import com.owlike.genson.Genson;
 import models.Appointment;
+import models.TimeBlock;
 import models.User;
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 import redis.clients.jedis.exceptions.JedisException;
 
@@ -17,6 +19,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
 
     protected static final String UID_Prefix = "apt:";
     protected static final String APTS_KEY = "appointments";
+    protected static final String TIMES_KEY = "time_blocks";
 
     static Genson genson;
 
@@ -73,6 +76,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
         t.zadd(APTS_KEY, time, redisAptId);
         t.zadd(userRedisId + ":appointments", time, redisAptId);
         t.zadd(therapistRedisId + ":given_appointments", time, redisAptId);
+        t.zremrangeByScore(TIMES_KEY, time, time + 30 * 60 * 1000 - 1);
         return (t.exec().size() > 0);
     }
 
@@ -133,5 +137,28 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
 
         jedis.del(redisAptId);
         jedis.zrem(APTS_KEY, redisAptId);
+    }
+
+    public List<TimeBlock> getFreeTimeBlocks(long start, long end) {
+        List<TimeBlock> timeBlocks = new ArrayList<TimeBlock>();
+        Set<String> timeJsons = jedis.zrangeByScore(TIMES_KEY, (start != 0 ? String.valueOf(start) : "-inf"), end != 0 ? String.valueOf(end) : "+inf");
+
+        for (String timeJson : timeJsons) {
+            timeBlocks.add(genson.deserialize(timeJson, TimeBlock.class));
+        }
+
+        return timeBlocks;
+    }
+
+    public void setFreeTimeBlocks(List<TimeBlock> times) {
+        Transaction t = jedis.multi();
+        for (TimeBlock time : times) {
+            t.zadd(TIMES_KEY, time.getDate().getTime(), genson.serialize(time));
+        }
+        t.exec();
+    }
+
+    public long removeFreeTimeBlocks(long start, long end) {
+        return jedis.zremrangeByScore(TIMES_KEY, start, end);
     }
 }

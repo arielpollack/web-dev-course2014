@@ -7,9 +7,12 @@ import exceptions.InvalidParameterException;
 import exceptions.UserNotFoundException;
 import models.Appointment;
 import models.JSONResponse;
+import models.TimeBlock;
 import models.User;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import java.util.HashMap;
 import java.util.List;
@@ -90,6 +93,24 @@ public class admin {
     //=========================================================================================
     // Appointments
     //=========================================================================================
+    @GET @Path("appointment/available")
+    @Produces(MediaType.APPLICATION_JSON)
+    public JSONResponse getFreeTimes(@Context HttpServletRequest request) {
+        try {
+            User user = (User)request.getSession().getAttribute("user");
+            if (user == null) {
+                return JSONResponse.noCredentials();
+            }
+
+            List<TimeBlock> timeBlocks = AppointmentsRepository.getFreeTimeBlocks();
+
+            return JSONResponse.success(timeBlocks);
+        } catch (Exception ex) {
+            System.err.println(ex);
+            return JSONResponse.error(ex.getMessage());
+        }
+    }
+
     @GET
     @Path("appointment")
     @Produces(MediaType.APPLICATION_JSON)

@@ -4,10 +4,11 @@ import db.jdbc.AppointmentsJDBCAdapter;
 import db.redis.AppointmentsRedisAdapter;
 import exceptions.InvalidParameterException;
 import models.Appointment;
+import models.TimeBlock;
 import models.User;
 import redis.clients.jedis.exceptions.JedisException;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by arielpollack on 12/30/14.
@@ -93,5 +94,59 @@ public class AppointmentsRepository {
         }
 
         return true;
+    }
+
+    static public List<TimeBlock> getFreeTimeBlocks() {
+        List<TimeBlock> times = redisAdapter.getFreeTimeBlocks(0, 0);
+        if (times != null && times.size() > 0) {
+            return times;
+        }
+
+        times = new ArrayList<TimeBlock>();
+        Calendar calendar = new GregorianCalendar();
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        long now = calendar.getTimeInMillis();
+        for (Integer day, i = 0; i <= 14; i++) {
+
+            day = calendar.get(Calendar.DAY_OF_WEEK);
+            calendar.set(Calendar.HOUR_OF_DAY, 9);
+
+            long blockTime = calendar.getTimeInMillis();
+
+            // 18 apts a day, 30 minutes each, 9 hours of opening
+            for (int j = 0; j < 18 && calendar.get(Calendar.HOUR_OF_DAY) < 18; j++) {
+                times.add(new TimeBlock(day, 30, blockTime));
+                calendar.add(Calendar.MINUTE, 30);
+                blockTime = calendar.getTimeInMillis();
+            }
+
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+        }
+
+        // add to redis to later filter by not available times
+        redisAdapter.setFreeTimeBlocks(times);
+
+        // fetch appointments for next 2 weeks
+        long twoWeeksFromNow = calendar.getTimeInMillis();
+        System.out.println(now + " " + twoWeeksFromNow);
+        try {
+            List<Appointment> appointments = getBetweenDates(now, twoWeeksFromNow);
+            for (Appointment appointment : appointments) {
+                long start = appointment.getDate().getTime(),
+                        end = start + 29 * 60 * 1000; // 29 minutes to not remove the block after
+                long removed = redisAdapter.removeFreeTimeBlocks(start, end);
+                System.out.println(removed + " time blocks removed between " + start + " and " + end + " because of appointment " + appointment.getId());
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            times = redisAdapter.getFreeTimeBlocks(0, 0);
+        }
+
+        return times;
     }
 }

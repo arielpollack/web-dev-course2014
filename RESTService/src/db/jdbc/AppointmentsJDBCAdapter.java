@@ -99,7 +99,7 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
 
     public List<Appointment> getBetweenDates(long start, long end) {
         List<Appointment> appointments = new ArrayList<Appointment>();
-        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `date` between ? and ? order by `date`;", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME);
+        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `date` between ? and ? group by a.id order by `date`;", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME);
 
         System.out.println("SQL: " + SQL);
         try {
@@ -125,7 +125,7 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         if (end > 0) {
             SQL += " and `date` <= ?";
         }
-        SQL += " order by `date`;";
+        SQL += " group by a.id order by `date`;";
 
         System.out.println("SQL: " + SQL);
         try {
