@@ -30,7 +30,7 @@ public class User {
 
     @XmlElement(name="is_admin")
     @JsonProperty("is_admin")
-    Boolean isAdmin;
+    Boolean isAdmin = false;
 
     public User() {
     } // JAXB requirement

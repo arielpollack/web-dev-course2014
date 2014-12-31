@@ -31,7 +31,6 @@ public class AdminFilter implements Filter {
             wrapper.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             OutputStream out = response.getOutputStream();
             out.write(wrapper.getData());
-            System.out.println("An attempt to access admin action without permission");
             Logger.getLogger("Admin").log(Level.WARNING, "An attempt to access admin action without permission");
             return;
         }
