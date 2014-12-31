@@ -102,11 +102,13 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
 
     public List<Appointment> getBetweenDates(long start, long end) {
         List<Appointment> appointments = new ArrayList<Appointment>();
-        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `date` between %d and %d);", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, start, end);
+        String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `date` between ? and ? order by `date`;", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME);
 
         System.out.println("SQL: " + SQL);
         try {
             PreparedStatement prSt = conn.prepareStatement(SQL);
+            prSt.setDate(1, new java.sql.Date(new java.util.Date(start).getTime()));
+            prSt.setDate(2, new java.sql.Date(new java.util.Date(end).getTime()));
             for (ResultSet st = prSt.executeQuery(); st.next(); ) {
                 appointments.add(new Appointment("", st));
             }
@@ -121,16 +123,25 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         List<Appointment> appointments = new ArrayList<Appointment>();
         String SQL = String.format("select a.*, u.id as u_id, u.fname as u_fname, u.lname as u_lname, u.email as u_email, u.phone as u_phone, u.id_number as u_id_number, u.is_admin as u_is_admin, t.is_admin as t_is_admin, t.id as t_id, t.fname as t_fname, t.lname as t_lname, t.email as t_email, t.phone as t_phone, t.id_number as t_id_number from `%s` as a left join `%s` as u on u.id = a.user_id left join `%s` as t on t.id = a.therapist_id where `user_id` = %s", TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, UsersJDBCAdapter.TABLE_NAME, user.getId());
         if (start > 0) {
-            SQL += " and `date` >= " + start;
+            SQL += " and `date` >= ?";
         }
         if (end > 0) {
-            SQL += " and `date` <= " + end;
+            SQL += " and `date` <= ?";
         }
-        SQL += ";";
+        SQL += " order by `date`;";
 
         System.out.println("SQL: " + SQL);
         try {
             PreparedStatement prSt = conn.prepareStatement(SQL);
+            if (start > 0) {
+                prSt.setDate(1, new java.sql.Date(new java.util.Date(start).getTime()));
+                if (end > 0) {
+                    prSt.setDate(2, new java.sql.Date(new java.util.Date(end).getTime()));
+                }
+            } else if (end > 0) {
+                prSt.setDate(1, new java.sql.Date(new java.util.Date(end).getTime()));
+            }
+
             for (ResultSet st = prSt.executeQuery(); st.next(); ) {
                 appointments.add(new Appointment("", st));
             }
