@@ -52,8 +52,13 @@ public class AuthFilter implements Filter {
 
         HttpSession session = req.getSession(false);
 
-        JSONResponse responseBody = new Genson().deserialize(wrapper.toString(), JSONResponse.class);
-        wrapper.setStatus(responseBody.getCode());
+        try {
+            JSONResponse responseBody = new Genson().deserialize(wrapper.toString(), JSONResponse.class);
+            wrapper.setStatus(responseBody.getCode());
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+            ex.printStackTrace();
+        }
 
         if (session == null) {
             wrapper.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

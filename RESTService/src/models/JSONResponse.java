@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class JSONResponse {
-    String status;
-    String error;
+    @XmlElement
+    String status, error;
 
     int code;
 

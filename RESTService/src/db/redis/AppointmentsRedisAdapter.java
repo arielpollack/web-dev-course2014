@@ -20,6 +20,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
     protected static final String UID_Prefix = "apt:";
     protected static final String APTS_KEY = "appointments";
     protected static final String TIMES_KEY = "time_blocks";
+    protected static final String LAST_UPDATE_KEY = "last_update";
 
     static Genson genson;
 
@@ -156,6 +157,28 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
             t.zadd(TIMES_KEY, time.getDate().getTime(), genson.serialize(time));
         }
         t.exec();
+    }
+
+    public void clean() {
+        long now = new GregorianCalendar().getTimeInMillis();
+        jedis.zremrangeByScore(TIMES_KEY, "-inf", String.valueOf(now));
+        jedis.set(LAST_UPDATE_KEY, String.valueOf(now));
+
+        System.out.println("Redis time blocks cleaned");
+    }
+
+    public Boolean needUpdate() {
+        long now = new GregorianCalendar().getTimeInMillis();
+        long lastUpdate;
+        String val = jedis.get(LAST_UPDATE_KEY);
+
+        if (val == null) {
+            lastUpdate = 0;
+        } else {
+            lastUpdate = Long.parseLong(val);
+        }
+
+        return (now - lastUpdate > 12 * 60 * 60 * 1000); // if update was more than 12 hours ago
     }
 
     public long removeFreeTimeBlocks(long start, long end) {

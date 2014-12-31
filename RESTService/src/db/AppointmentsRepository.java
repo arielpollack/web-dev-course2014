@@ -97,10 +97,16 @@ public class AppointmentsRepository {
     }
 
     static public List<TimeBlock> getFreeTimeBlocks() {
-        List<TimeBlock> times = redisAdapter.getFreeTimeBlocks(0, 0);
-        if (times != null && times.size() > 0) {
-            return times;
+        List<TimeBlock> times;
+
+        if (!redisAdapter.needUpdate()) {
+            times = redisAdapter.getFreeTimeBlocks(0, 0);
+            if (times != null && times.size() > 0) {
+                return times;
+            }
         }
+
+        redisAdapter.clean();
 
         times = new ArrayList<TimeBlock>();
         Calendar calendar = new GregorianCalendar();
