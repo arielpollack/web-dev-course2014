@@ -76,7 +76,7 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
         t.zadd(APTS_KEY, time, redisAptId);
         t.zadd(userRedisId + ":appointments", time, redisAptId);
         t.zadd(therapistRedisId + ":given_appointments", time, redisAptId);
-        t.zremrangeByScore(TIMES_KEY, time, time + 30 * 60 * 1000 - 1);
+        t.zremrangeByScore(TIMES_KEY, time, time + 29 * 60 * 1000);
         return (t.exec().size() > 0);
     }
 

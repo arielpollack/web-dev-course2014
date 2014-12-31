@@ -1,6 +1,8 @@
 package filters;
 
+import com.owlike.genson.Genson;
 import filters.GenericResponseWrapper;
+import models.JSONResponse;
 import models.User;
 
 import javax.servlet.*;
@@ -49,6 +51,9 @@ public class AuthFilter implements Filter {
         long t2 = System.currentTimeMillis();
 
         HttpSession session = req.getSession(false);
+
+        JSONResponse responseBody = new Genson().deserialize(wrapper.toString(), JSONResponse.class);
+        wrapper.setStatus(responseBody.getCode());
 
         if (session == null) {
             wrapper.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

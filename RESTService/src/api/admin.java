@@ -11,6 +11,7 @@ import models.TimeBlock;
 import models.User;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -80,7 +81,7 @@ public class admin {
             String password = (String) obj.get("password");
 
             if (UsersRepository.insert(user, password)) {
-                return JSONResponse.success(user);
+                return JSONResponse.success(user).code(HttpServletResponse.SC_CREATED);
             }
 
             return JSONResponse.error("Insertion error");
@@ -155,7 +156,7 @@ public class admin {
                 return JSONResponse.error("Insertion error");
             }
 
-            return JSONResponse.success(newAppointment);
+            return JSONResponse.success(newAppointment).code(HttpServletResponse.SC_CREATED);
         } catch (Exception ex) {
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
@@ -172,7 +173,7 @@ public class admin {
                 return JSONResponse.error("Update error");
             }
 
-            return JSONResponse.success(null);
+            return JSONResponse.success(null).code(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception ex) {
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
@@ -188,7 +189,7 @@ public class admin {
                 return JSONResponse.error("Delete error");
             }
 
-            return JSONResponse.success(null);
+            return JSONResponse.success(null).code(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception ex) {
             System.err.println(ex);
             ex.printStackTrace();

@@ -7,5 +7,6 @@ public class NoCredentialsException extends Exception {
 
     public NoCredentialsException() {
         super("No credentials");
+
     }
 }

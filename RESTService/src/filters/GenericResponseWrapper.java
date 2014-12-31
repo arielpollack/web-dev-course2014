@@ -63,6 +63,11 @@ public class GenericResponseWrapper extends HttpServletResponseWrapper
 	{
 		return status;
 	}
+
+	@Override
+	public String toString() {
+		return output.toString();
+	}
 }
 
 class FilterServletOutputStream extends ServletOutputStream 

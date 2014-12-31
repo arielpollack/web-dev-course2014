@@ -9,6 +9,7 @@ import models.TimeBlock;
 import models.User;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -39,7 +40,7 @@ public class users {
                 data.put("user", user);
                 return JSONResponse.success(data);
             } else {
-                throw new NoCredentialsException();
+                return JSONResponse.noCredentials();
             }
         } catch (Exception ex) {
             System.err.println(ex);
@@ -65,7 +66,7 @@ public class users {
                 return JSONResponse.error("Update error");
             }
 
-            return JSONResponse.success(user);
+            return JSONResponse.success(null).code(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception ex) {
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
@@ -123,7 +124,7 @@ public class users {
                 return JSONResponse.error("Insert error");
             }
 
-            return JSONResponse.success(newAppointment);
+            return JSONResponse.success(newAppointment).code(HttpServletResponse.SC_CREATED);
         } catch (Exception ex) {
             System.err.println(ex);
             ex.printStackTrace();
@@ -142,7 +143,7 @@ public class users {
                 return JSONResponse.error("Update error");
             }
 
-            return JSONResponse.success(appointment);
+            return JSONResponse.success(null).code(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception ex) {
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
