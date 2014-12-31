@@ -8,7 +8,6 @@ import exceptions.UserNotFoundException;
 import models.Appointment;
 import models.JSONResponse;
 import models.User;
-import org.codehaus.jettison.json.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -71,8 +70,10 @@ public class admin {
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse createUser(HashMap<String, Object> obj) {
         try {
-            HashMap<String, String> userObject = (HashMap<String, String>) obj.get("user");
-            User user = new Genson().deserialize(new JSONObject(userObject).toString(), User.class);
+            Genson genson = new Genson();
+            HashMap<String, String> userObject = (HashMap<String, String>)obj.get("user");
+            String json = genson.serialize(userObject);
+            User user = genson.deserialize(json, User.class);
             String password = (String) obj.get("password");
 
             if (UsersRepository.insert(user, password)) {
@@ -150,7 +151,7 @@ public class admin {
                 return JSONResponse.error("Update error");
             }
 
-            return JSONResponse.success(appointment);
+            return JSONResponse.success(null);
         } catch (Exception ex) {
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
@@ -158,18 +159,18 @@ public class admin {
     }
 
     @DELETE
-    @Path("appointment")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("appointment/{appointment_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse deleteAppointment(Appointment appointment) {
+    public JSONResponse deleteAppointment(@PathParam("appointment_id") String appointmentId) {
         try {
-            if (!AppointmentsRepository.delete(appointment)) {
+            if (!AppointmentsRepository.delete(appointmentId)) {
                 return JSONResponse.error("Delete error");
             }
 
             return JSONResponse.success(null);
         } catch (Exception ex) {
             System.err.println(ex);
+            ex.printStackTrace();
             return JSONResponse.error(ex.getMessage());
         }
     }

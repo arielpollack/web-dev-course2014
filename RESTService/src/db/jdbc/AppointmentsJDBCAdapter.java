@@ -4,9 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
-import java.sql.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -44,7 +41,7 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
                     + "`id` int(11) not null auto_increment, "
                     + "`date` timestamp not null, "
                     + "`user_id` int(11) not null, "
-                    + "`therapist_id` int(11) not null, "
+                    + "`therapist_id` int(11) not null default 1, "
                     + "primary key(`id`)"
                     + ") ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_bin;";
             st.executeUpdate(SQL);
@@ -65,9 +62,9 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
             User therapist = appointment.getTherapist();
             User user = appointment.getUser();
             PreparedStatement prSt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            prSt.setDate(1, new java.sql.Date(appointment.getDate().getTime()));
+            prSt.setTimestamp(1, new java.sql.Timestamp(appointment.getDate().getTime()));
             prSt.setString(2, user != null ? user.getId() : null);
-            prSt.setString(3, therapist != null ? therapist.getId() : "3");
+            prSt.setString(3, therapist != null ? therapist.getId() : "1");
             prSt.executeUpdate();
             ResultSet rs = prSt.getGeneratedKeys();
             if (rs != null && rs.next()) {
@@ -107,8 +104,8 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         System.out.println("SQL: " + SQL);
         try {
             PreparedStatement prSt = conn.prepareStatement(SQL);
-            prSt.setDate(1, new java.sql.Date(new java.util.Date(start).getTime()));
-            prSt.setDate(2, new java.sql.Date(new java.util.Date(end).getTime()));
+            prSt.setTimestamp(1, new java.sql.Timestamp(start));
+            prSt.setTimestamp(2, new java.sql.Timestamp(end));
             for (ResultSet st = prSt.executeQuery(); st.next(); ) {
                 appointments.add(new Appointment("", st));
             }
@@ -134,12 +131,12 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         try {
             PreparedStatement prSt = conn.prepareStatement(SQL);
             if (start > 0) {
-                prSt.setDate(1, new java.sql.Date(new java.util.Date(start).getTime()));
+                prSt.setTimestamp(1, new java.sql.Timestamp(start));
                 if (end > 0) {
-                    prSt.setDate(2, new java.sql.Date(new java.util.Date(end).getTime()));
+                    prSt.setTimestamp(2, new java.sql.Timestamp(end));
                 }
             } else if (end > 0) {
-                prSt.setDate(1, new java.sql.Date(new java.util.Date(end).getTime()));
+                prSt.setTimestamp(1, new java.sql.Timestamp(end));
             }
 
             for (ResultSet st = prSt.executeQuery(); st.next(); ) {
@@ -157,7 +154,7 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         String SQL = String.format("update `%s` set `date` = ?, `therapist_id` = %s where `id` = %d;", TABLE_NAME, appointment.getTherapist().getId(), appointment.getId());
         try {
             PreparedStatement st = conn.prepareStatement(SQL);
-            st.setDate(1, new java.sql.Date(appointment.getDate().getTime()));
+            st.setTimestamp(1, new java.sql.Timestamp(appointment.getDate().getTime()));
             st.executeUpdate();
 
             return true;
@@ -168,8 +165,8 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
         return false;
     }
 
-    public Boolean delete(Appointment appointment) {
-        String SQL = "delete from `" + TABLE_NAME + "` where `id` = " + appointment.getId();
+    public Boolean delete(String appointmentId) {
+        String SQL = "delete from `" + TABLE_NAME + "` where `id` = " + appointmentId;
         try {
             Statement st = conn.prepareStatement(SQL);
             st.executeUpdate(SQL);

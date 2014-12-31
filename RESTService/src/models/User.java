@@ -7,17 +7,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class User {
 
     String id;
 
+    @XmlElement(name="first_name")
     @JsonProperty("first_name")
     String firstName;
+    @XmlElement(name="last_name")
     @JsonProperty("last_name")
     String lastName;
+    @XmlElement(name="id_number")
     @JsonProperty("id_number")
     String idNumber;
     String phone;
@@ -28,6 +33,7 @@ public class User {
     @JsonProperty("preferred_hours")
     List<String> preferredHours;
 
+    @XmlElement(name="is_admin")
     @JsonProperty("is_admin")
     Boolean isAdmin;
 
@@ -74,21 +80,25 @@ public class User {
         this.email = email;
     }
 
+    @XmlElement(name="first_name")
     @JsonProperty("first_name")
     public String getFirstName() {
         return this.firstName;
     }
 
+    @XmlElement(name="last_name")
     @JsonProperty("last_name")
     public String getLastName() {
         return this.lastName;
     }
 
+    @XmlElement(name="full_name")
     @JsonProperty("full_name")
     public String getFullName() {
         return this.firstName + " " + this.lastName;
     }
 
+    @XmlElement(name="id_number")
     @JsonProperty("id_number")
     public String getIdNumber() {
         return this.idNumber;
@@ -106,6 +116,7 @@ public class User {
         return this.id;
     }
 
+    @XmlTransient
     @JsonIgnore
     public Boolean isAdmin() {
         return this.isAdmin;

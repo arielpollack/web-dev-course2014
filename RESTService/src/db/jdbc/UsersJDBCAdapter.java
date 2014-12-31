@@ -46,10 +46,13 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
                     + "`id_number` varchar(11) not null, "
                     + "`phone` varchar(11), "
                     + "`password` varchar(255) not null, "
-                    + "`is_admin` int(1) not null, "
+                    + "`is_admin` int(1) not null default 0, "
                     + "primary key(`id`, `id_number`)"
                     + ") ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_bin;";
+
+            String Insert = "insert into `" + TABLE_NAME + "` (`id`, `fname`, `lname`, `id_number`, `password`, `email`) values(1, 'Temp','Therapist','1337','0a2e4da8f53ff496298559b7f100067ec5868c8b','contact@aptmanage.com');";
             st.executeUpdate(SQL);
+            st.executeUpdate(Insert);
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
@@ -84,7 +87,6 @@ public class UsersJDBCAdapter extends BaseJDBCAdepter {
     public Boolean update(User user) {
         String SQL = String.format("update `%s` set `fname`=?, `lname`=?, `id_number`=?, `email`=?, `phone`=? where `id`=?;", TABLE_NAME);
         try {
-            System.out.println(user.toString());
             PreparedStatement prSt = conn.prepareStatement(SQL);
             prSt.setString(1, user.getFirstName());
             prSt.setString(2, user.getLastName());

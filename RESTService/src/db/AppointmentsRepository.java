@@ -5,8 +5,8 @@ import db.redis.AppointmentsRedisAdapter;
 import exceptions.InvalidParameterException;
 import models.Appointment;
 import models.User;
+import redis.clients.jedis.exceptions.JedisException;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,15 +81,17 @@ public class AppointmentsRepository {
         return true;
     }
 
-    static public Boolean delete(Appointment appointment) {
-        if (!jdbsAdapter.delete(appointment)) {
+    static public Boolean delete(String appointmentId) {
+        if (!jdbsAdapter.delete(appointmentId)) {
             return false;
         }
 
-        if (!redisAdapter.delete(appointment)) {
-            System.out.println("Insert to Redis failed");
+        try {
+            redisAdapter.delete(appointmentId);
+        } catch (JedisException ex) {
+            System.out.println("Delete from Redis failed: " + ex.getMessage());
         }
 
-        return false;
+        return true;
     }
 }

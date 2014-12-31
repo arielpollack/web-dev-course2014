@@ -4,6 +4,7 @@ import com.owlike.genson.Genson;
 import models.Appointment;
 import models.User;
 import redis.clients.jedis.Transaction;
+import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.*;
 
@@ -119,24 +120,18 @@ public class AppointmentsRedisAdapter extends BaseRedisAdapter {
             if (appointment != null) {
                 appointments.add(appointment);
             } else { // appointment not exist anymore
-                jedis.zrem(key);
+                jedis.zrem(APTS_KEY, key);
             }
         }
 
         return appointments;
     }
 
-    public Boolean delete(Appointment appointment) {
+    public void delete(String appointmentId) throws JedisException {
         // objects keys
-        String userRedisId = UsersRedisAdapter.UID_Prefix + appointment.getUser().getId();
-        String therapistRedisId = UsersRedisAdapter.UID_Prefix + appointment.getTherapist().getId();
-        String redisAptId = UID_Prefix + appointment.getId();
+        String redisAptId = UID_Prefix + appointmentId;
 
-        Transaction t = jedis.multi();
-        t.hdel(redisAptId);
-        t.zrem(APTS_KEY, redisAptId);
-        t.zrem(userRedisId + ":appointments", redisAptId);
-        t.zrem(therapistRedisId + ":given_appointments", redisAptId);
-        return (t.exec().size() > 0);
+        jedis.del(redisAptId);
+        jedis.zrem(APTS_KEY, redisAptId);
     }
 }

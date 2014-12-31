@@ -56,8 +56,6 @@ public class users {
     public JSONResponse updateUser(@Context HttpServletRequest request, User user) {
         try {
             User currentUser = checkCredentials(request);
-            System.out.println(currentUser);
-            System.out.println(user);
             if (!currentUser.getId().equals(user.getId())) {
                 throw new NoCredentialsException();
             }
