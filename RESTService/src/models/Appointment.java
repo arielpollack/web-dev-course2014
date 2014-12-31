@@ -32,7 +32,7 @@ public class Appointment {
     }
 
     public Appointment(String aliasIdentifier, ResultSet rs) throws SQLException {
-        this(rs.getDate(aliasIdentifier + "date"),
+        this(rs.getTimestamp(aliasIdentifier + "date"),
                 new User("u_", rs),
                 new User("t_", rs),
                 rs.getInt(aliasIdentifier + "id"));
