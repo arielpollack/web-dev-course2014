@@ -262,7 +262,7 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"json":"{\\"id_number\\":\\"1234567\\",\\"password\\":\\"test\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="body" type="string">["{\\n  \\"id_number\\": \\"1234567\\",\\n  \\"password\\": \\"test\\"\\n}"]</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Login</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z142"></relationship>
@@ -278,12 +278,12 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">PUT</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">["{\\n  \\"date\\": 1421136000000,\\n  \\"id\\": 6,\\n  \\"therapist\\": {\\n    \\"id\\": \\"1\\"\\n  }\\n}"]</attribute>
+        <attribute name="body" type="string">["{\\n  \\"date\\": 1421136000000,\\n  \\"id\\": 6\\n}"]</attribute>
         <attribute name="order" type="int64">3</attribute>
         <attribute name="name" type="string">Update Appointment</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z141"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z138 z110"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z138"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z122">
         <attribute name="value" type="string"></attribute>
