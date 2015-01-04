@@ -46,6 +46,18 @@ public class AuthFilter implements Filter {
 
         String URI = req.getRequestURI();
 
+        wrapper.setHeader("Access-Control-Allow-Origin", "null");
+        wrapper.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+        wrapper.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        wrapper.setHeader("Access-Control-Allow-Credentials", "true");
+
+        // for options set OK
+        if (req.getMethod().equals("OPTIONS")) {
+            wrapper.setStatus(HttpServletResponse.SC_OK);
+            out.write(wrapper.getData());
+            return;
+        }
+
         long t1 = System.currentTimeMillis();
         chain.doFilter(request, wrapper);
         long t2 = System.currentTimeMillis();
