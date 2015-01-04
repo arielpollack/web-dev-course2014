@@ -1,0 +1,8 @@
+<section>
+	<ul class="appointments">
+		<li class="appointment" ng-repeat="apt in appointments">
+			<h3>{{apt.date | date : 'dd-MM-yy HH:mm'}}</h3>
+			<h4>{{apt.therapist.full_name}}</h4>
+		</li>
+	</ul>
+</section>
