@@ -78,14 +78,16 @@ public class users {
     //=========================================================================================
     @GET @Path("appointment/available")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONResponse getFreeTimes(@Context HttpServletRequest request) {
+    public JSONResponse getFreeTimes(@Context HttpServletRequest request, @QueryParam("start") Long start, @QueryParam("end") Long end) {
         try {
             User user = (User)request.getSession().getAttribute("user");
             if (user == null) {
                 return JSONResponse.noCredentials();
             }
 
-            List<TimeBlock> timeBlocks = AppointmentsRepository.getFreeTimeBlocks();
+            System.out.println(start + " " + end);
+
+            List<TimeBlock> timeBlocks = AppointmentsRepository.getFreeTimeBlocks(start, end);
 
             return JSONResponse.success(timeBlocks);
         } catch (Exception ex) {

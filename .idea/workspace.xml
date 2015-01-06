@@ -10,9 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f093a983-9db3-4d36-a271-c138ae6ab147" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/API.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_jersey_jersey_json_1_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/redis_clients_jedis_2_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/app/views/createAppointment.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APTManage API.paw" afterPath="$PROJECT_DIR$/APTManage API.paw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/filters/AuthFilter.java" afterPath="$PROJECT_DIR$/RESTService/src/filters/AuthFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" afterPath="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/api/admin.java" afterPath="$PROJECT_DIR$/RESTService/src/api/admin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app/lib/app.js" afterPath="$PROJECT_DIR$/app/app/lib/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app/controllers/appointmentController.js" afterPath="$PROJECT_DIR$/app/app/controllers/appointmentController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app/controllers/appointmentsController.js" afterPath="$PROJECT_DIR$/app/app/controllers/appointmentsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app/lib/globals.js" afterPath="$PROJECT_DIR$/app/app/lib/globals.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app/controllers/loginController.js" afterPath="$PROJECT_DIR$/app/app/controllers/loginController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app/controllers/userController.js" afterPath="$PROJECT_DIR$/app/app/controllers/userController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RESTService/src/api/users.java" afterPath="$PROJECT_DIR$/RESTService/src/api/users.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="APTManage.iws" />
@@ -40,44 +51,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="appointmentController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App/js/appointmentController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28421053" vertical-offset="0" max-vertical-offset="475">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding>
-                <element signature="e#230#706#0" expanded="false" />
-                <element signature="e#760#1253#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="users.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RESTService/src/api/users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="2280">
-              <caret line="154" column="55" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2310">
+              <caret line="89" column="70" selection-start-line="89" selection-start-column="70" selection-end-line="89" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RESTService/src/filters/AuthFilter.java">
+      <file leaf-file-name="admin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/api/admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1395">
-              <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1112" max-vertical-offset="2835">
+              <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppointmentsRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45852187" vertical-offset="1226" max-vertical-offset="2295">
+              <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppointmentsRedisAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1984" max-vertical-offset="2655">
+              <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/index.html">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625" vertical-offset="195" max-vertical-offset="735">
-              <caret line="38" column="88" selection-start-line="38" selection-start-column="88" selection-end-line="38" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="495">
+              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -127,18 +145,18 @@
         <option value="$PROJECT_DIR$/RESTService/src/db/jdbc/AppointmentsJDBCAdapter.java" />
         <option value="$PROJECT_DIR$/RESTService/src/filters/GenericResponseWrapper.java" />
         <option value="$PROJECT_DIR$/RESTService/src/exceptions/NoCredentialsException.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/api/admin.java" />
         <option value="$PROJECT_DIR$/RESTService/src/filters/AdminFilter.java" />
         <option value="$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java" />
         <option value="$PROJECT_DIR$/RESTService/src/models/User.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" />
         <option value="$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java" />
         <option value="$PROJECT_DIR$/RESTService/src/models/JSONResponse.java" />
         <option value="$PROJECT_DIR$/.idea/artifacts/RESTService_war_exploded.xml" />
         <option value="$PROJECT_DIR$/RESTService/src/filters/AuthFilter.java" />
-        <option value="$PROJECT_DIR$/RESTService/src/api/users.java" />
         <option value="$PROJECT_DIR$/App/index.html" />
         <option value="$PROJECT_DIR$/App/js/appointmentController.js" />
+        <option value="$PROJECT_DIR$/RESTService/src/api/admin.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/api/users.java" />
+        <option value="$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java" />
       </list>
     </option>
   </component>
@@ -160,8 +178,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="78" />
-    <option name="y" value="-952" />
+    <option name="x" value="469" />
+    <option name="y" value="-1057" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
@@ -213,6 +231,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,23 +330,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="APTManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="APTManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -345,7 +349,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2589183" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/RESTService/web/WEB-INF/lib" />
@@ -794,15 +798,17 @@
       <workItem from="1420236438928" duration="86000" />
       <workItem from="1420237251160" duration="797000" />
       <workItem from="1420284925823" duration="7056000" />
+      <workItem from="1420572963948" duration="948000" />
+      <workItem from="1420575360485" duration="54000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95861000" />
+    <option name="totallyTimeSpent" value="96863000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="78" y="-952" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <frame x="469" y="-1057" width="1280" height="773" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -824,7 +830,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987854" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776618" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32670453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -832,7 +838,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32825205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -863,6 +869,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="495">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/db/jdbc/UsersJDBCAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1635">
@@ -1116,31 +1130,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82740587" vertical-offset="1699" max-vertical-offset="2655">
-          <caret line="180" column="96" selection-start-line="180" selection-start-column="96" selection-end-line="180" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/api/admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0125523" vertical-offset="60" max-vertical-offset="3075">
-          <caret line="196" column="9" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1425">
           <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39539748" vertical-offset="1137" max-vertical-offset="2460">
-          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1191,45 +1184,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2677515" vertical-offset="89" max-vertical-offset="1140">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="e#663#664#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/filters/AuthFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1395">
+        <state vertical-scroll-proportion="0.22337279" vertical-offset="719" max-vertical-offset="1395">
           <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/db/redis/AppointmentsRedisAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1984" max-vertical-offset="2655">
+          <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESTService/src/api/admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1112" max-vertical-offset="2835">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RESTService/src/api/users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="2280">
-          <caret line="154" column="55" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2310">
+          <caret line="89" column="70" selection-start-line="89" selection-start-column="70" selection-end-line="89" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/index.html">
+    <entry file="file://$PROJECT_DIR$/RESTService/src/db/AppointmentsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="195" max-vertical-offset="735">
-          <caret line="38" column="88" selection-start-line="38" selection-start-column="88" selection-end-line="38" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.45852187" vertical-offset="1226" max-vertical-offset="2295">
+          <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/js/appointmentController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28421053" vertical-offset="0" max-vertical-offset="475">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#230#706#0" expanded="false" />
-            <element signature="e#760#1253#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

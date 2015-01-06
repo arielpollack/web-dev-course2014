@@ -96,14 +96,11 @@ public class AppointmentsRepository {
         return true;
     }
 
-    static public List<TimeBlock> getFreeTimeBlocks() {
+    static public List<TimeBlock> getFreeTimeBlocks(long st, long en) {
         List<TimeBlock> times;
 
         if (!redisAdapter.needUpdate()) {
-            times = redisAdapter.getFreeTimeBlocks(0, 0);
-            if (times != null && times.size() > 0) {
-                return times;
-            }
+            return redisAdapter.getFreeTimeBlocks(st, en);
         }
 
         redisAdapter.clean();
