@@ -1,4 +1,4 @@
-var app = angular.module('apt-controllers', [])
+var app = angular.module('apt-controllers');
 
 app.controller('AppointmentsController', ['$scope', '$http', function($scope, $http) {
 

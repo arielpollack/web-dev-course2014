@@ -1,4 +1,4 @@
-var app = angular.module('apt-controllers', [])
+var app = angular.module('apt-controllers');
 
 app.controller('LoginController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 	$scope.login = function() {

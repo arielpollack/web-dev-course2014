@@ -1,2 +1,7 @@
 *.class
 out/
+RESTService/web/WEB-INF/lib/jackson-core-asl-1.7.1.jar
+RESTService/web/WEB-INF/lib/jackson-jaxrs-1.7.1.jar
+RESTService/web/WEB-INF/lib/jackson-mapper-asl-1.7.1.jar
+RESTService/web/WEB-INF/lib/jackson-xc-1.7.1.jar
+RESTService/web/WEB-INF/lib/jersey-json-1.8.jar

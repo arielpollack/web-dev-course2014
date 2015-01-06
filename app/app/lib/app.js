@@ -9,7 +9,11 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'app/views/login.html',
 		controller: 'LoginController'
 	}).
-	when('/appointment/:aptId', {
+	when('/appointment', {
+		templateUrl: 'app/views/appointment.html',
+		controller: 'AppointmentController'
+	}).
+	when('/appointment/:start', {
 		templateUrl: 'app/views/appointment.html',
 		controller: 'AppointmentController'
 	}).
