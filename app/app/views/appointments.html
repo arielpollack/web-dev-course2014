@@ -1,8 +1,13 @@
+<header class="navbar">
+	<a href="#/profile" class="navbar-link fl"><img class="navbar-image" src="http://www.clker.com/cliparts/V/u/o/j/G/b/white-cog-hi.png" /></a>
+
+	<a href="#/logout" class="navbar-link fr"><img class="navbar-image" src="https://yemekhane.anadolu.edu.tr/resources/images/logout.png" /></a>
+</header>
+
 <section>
 	<ul class="appointments">
 		<li class="appointment" ng-repeat="apt in appointments">
-			<h3>{{apt.date | date : 'dd-MM-yy HH:mm'}}</h3>
-			<h4>{{apt.therapist.full_name}}</h4>
-		</li>
+			<user-appointment info="apt"></user-appointment>
+		</li> 
 	</ul>
 </section>
