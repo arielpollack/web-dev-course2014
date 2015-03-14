@@ -139,14 +139,20 @@ public class users {
     @Produces(MediaType.APPLICATION_JSON)
     public JSONResponse updateAppointment(@Context HttpServletRequest request, Appointment appointment) {
         try {
-            User user = checkCredentials(request);
-            appointment.setUser(user); // appointment is received only with date, the user can't choose the therapist
-            if (!AppointmentsRepository.update(appointment)) {
+            checkCredentials(request);
+
+            Appointment apt = AppointmentsRepository.get(appointment.getId());
+            if (apt == null) {
+                return JSONResponse.error("Appointment not exist");
+            }
+
+            if (!AppointmentsRepository.update(apt)) {
                 return JSONResponse.error("Update error");
             }
 
             return JSONResponse.success(null).code(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception ex) {
+            ex.printStackTrace();
             System.err.println(ex);
             return JSONResponse.error(ex.getMessage());
         }

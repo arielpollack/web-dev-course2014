@@ -50,6 +50,7 @@ input[type="submit"] {
 	left: 0;
 	right: 0;
 	top: 0;
+	z-index: 10;
 }
 
 .navbar-image {
@@ -70,22 +71,37 @@ input[type="submit"] {
 	margin-top: 100px;
 }
 
-.appointment {
+.appointment, .time-block {
 	display: block;
 	background-color: white;
 	border: 1px solid #999999;	
 	margin: 10px auto;
 	width: 80%;
+	height: 80px;	
 	padding: 0;
+	position: relative;
 }
 
-.appointment h4, .appointment h3 {
-	padding: 10px;
+.time-block {
+	width: 30%;
+	display: inline-block;
+	height: 40px;
+	margin: 1%;
+	position: inherit;
+	text-align: center;
+}
+
+.time-blocks {
+	margin: 0 auto;
 }
 
 .appointment .buttons {
 	width: 100%;
 	margin: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
 }
 
 .appointment .buttons a {
@@ -95,12 +111,67 @@ input[type="submit"] {
 	display: inline-block;
 	padding: 5px;
 	margin: 0px;
-	width: 50%;
+	width: 100%;
 	box-sizing: border-box;
 	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 .appointment img {
 	width: 15px;
 	height: 15px;
+}
+
+.appointment .date {
+	padding: 5px;
+	width: 20%;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.appointment .therapist {
+	padding: 5px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.time-block .date {
+	padding: 5px;
+	width: 100%;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.time-block:hover, .time-block:focus {
+	
+}
+
+.navigation {
+	height: 40px;
+}
+
+.full-width {
+	width: 100%!important;
+}
+
+.floating-button {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #588be6;
+	box-shadow: 2px 2px 15px #c7c4d3;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}
+
+.floating-button .plus-button {
+	background: url('http://www.iconsdb.com/icons/download/white/plus-512.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
 }

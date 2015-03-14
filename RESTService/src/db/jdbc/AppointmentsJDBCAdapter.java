@@ -151,7 +151,7 @@ public class AppointmentsJDBCAdapter extends BaseJDBCAdepter {
 
     public Boolean update(Appointment appointment) {
 
-        String SQL = String.format("update `%s` set `date` = ?, `therapist_id` = %s where `id` = %d;", TABLE_NAME, appointment.getTherapist().getId(), appointment.getId());
+        String SQL = String.format("update `%s` set `date` = ? where `id` = %d;", TABLE_NAME, appointment.getId());
         try {
             PreparedStatement st = conn.prepareStatement(SQL);
             st.setTimestamp(1, new java.sql.Timestamp(appointment.getDate().getTime()));

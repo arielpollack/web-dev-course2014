@@ -8,9 +8,10 @@ app.controller('LoginController', ['$scope', '$http', '$location', function($sco
 		};
 
 		$http.post(baseURL + "users/login", data).
-			success(function(data) {
+			success(function(response) {
 				alert('Success!');
-				console.log(data);
+				var appointments = response["data"]["appointments"];
+				sqliteService.addAppointments(appointments);
 				$location.path('/appointments');
 			}).
 			error(function(error) {

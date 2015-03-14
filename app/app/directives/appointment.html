@@ -1,6 +1,7 @@
-<h3>{{apt.date | date : 'dd-MM-yy HH:mm'}}</h3>
-<h4>{{apt.therapist.full_name}}</h4>
+<div class="date">{{apt.date | date : 'dd-MM'}}</div>
+<div class="date">{{apt.date | date : 'HH:mm'}}</div>
+<div class="therapist">{{apt.therapist_name}}</div>
 
 <div class="buttons">
-	<a ng-click="delete(apt.id)"><img src="http://www.iconsdb.com/icons/preview/white/delete-xxl.png"></a><a ng-click="edit(apt.id)"><img src="http://www.iconsdb.com/icons/preview/white/edit-xxl.png"></a>
+	<a ng-click="edit(apt.id)"><img src="http://www.iconsdb.com/icons/preview/white/edit-xxl.png"></a>
 </div>

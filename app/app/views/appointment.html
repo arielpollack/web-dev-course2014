@@ -1,6 +1,29 @@
+<header class="navbar">
+	<a href="#/appointments" class="navbar-link fl"><img class="navbar-image" src="http://nexcle.com.hk/nex/sites/all/themes/bootstrap/bootstrap_subtheme/images/icon_arrow_left.png" /></a>
+	Choose Day & Time
+</header>
+
 <section>
 	<div class="navigation"ֲָ>
-		<a href="#/appointment/{{nextDay}}">&gt;</a>
-		<a href="#/appointment/{{prevDay}}">&lt;</a>
+		<a href="#/appointment/{{prevDay}}/{{updatingAppointment}}">
+			<img width=25 height=35 src="assets/images/arrow_left.png" class="fl"/>
+		</a>
+
+		<div style="left: 50%; position: absolute">
+			<div style="left: -50%; position: relative; font-size: 20px; font-weight: bold; color: #000080">{{ formattedDay }}</div>
+		</div>
+
+		<a href="#/appointment/{{nextDay}}/{{updatingAppointment}}">
+			<img width=25 height=35 src="assets/images/arrow_right.png" class="fr"/>
+		</a>
 	</div>
+
+	<ul class="time-blocks">
+		<li class="time-block" ng-repeat="block in blocks | orderBy:'date'">
+			<div class="date" ng-click="selectBlock(block.date)">
+				{{block.date | date : 'HH:mm'}}
+			</div>
+		</li>
+	</ul>
+
 </section>

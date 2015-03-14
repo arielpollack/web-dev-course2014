@@ -17,13 +17,13 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'app/views/appointment.html',
 		controller: 'AppointmentController'
 	}).
+	when('/appointment/:start/:apt', {
+		templateUrl: 'app/views/appointment.html',
+		controller: 'AppointmentController'
+	}).
 	when('/appointments', {
 		templateUrl: 'app/views/appointments.html',
 		controller: 'AppointmentsController'
-	}).
-	when('/profile', {
-		templateUrl: 'app/views/editDetails.html',
-		controller: 'UserController'
 	}).
 	otherwise({
 		redirectTo: '/'

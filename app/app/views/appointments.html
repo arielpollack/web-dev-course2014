@@ -1,13 +1,18 @@
 <header class="navbar">
 	<a href="#/profile" class="navbar-link fl"><img class="navbar-image" src="http://www.clker.com/cliparts/V/u/o/j/G/b/white-cog-hi.png" /></a>
-
+	Appointments
 	<a href="#/logout" class="navbar-link fr"><img class="navbar-image" src="https://yemekhane.anadolu.edu.tr/resources/images/logout.png" /></a>
 </header>
 
 <section>
 	<ul class="appointments">
-		<li class="appointment" ng-repeat="apt in appointments">
+		<li class="appointment" ng-repeat="apt in appointments | orderBy:'-date'">
 			<user-appointment info="apt"></user-appointment>
 		</li> 
 	</ul>
+
+	
+	<a href="#/appointment" class="floating-button">
+		<div class="plus-button"></div>
+	</a>
 </section>

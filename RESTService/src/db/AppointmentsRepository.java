@@ -82,6 +82,21 @@ public class AppointmentsRepository {
         return true;
     }
 
+    static public Appointment get(Integer id) {
+        Appointment apt;
+
+        if ((apt = redisAdapter.getById(id.toString())) != null) {
+            return apt;
+        }
+
+        if ((apt = jdbsAdapter.getById(id)) != null) {
+            redisAdapter.insert(apt);
+            return apt;
+        }
+
+        return null;
+    }
+
     static public Boolean delete(String appointmentId) {
         if (!jdbsAdapter.delete(appointmentId)) {
             return false;
@@ -100,6 +115,7 @@ public class AppointmentsRepository {
         List<TimeBlock> times;
 
         if (!redisAdapter.needUpdate()) {
+            System.out.println("redis not need update");
             return redisAdapter.getFreeTimeBlocks(st, en);
         }
 
